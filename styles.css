@@ -37,6 +37,21 @@ body {
 img {
   display: block;
   max-width: 100%;
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+img,
+video,
+.hero-visual,
+.lifestyle-frame,
+.maya-avatar,
+.dm-proof-card,
+.product-video-frame {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
 }
 
 a {
@@ -542,6 +557,36 @@ h3 {
   margin-top: 28px;
 }
 
+.product-video-frame {
+  position: relative;
+  overflow: hidden;
+  width: min(100%, 360px);
+  margin-inline: auto;
+  padding: 8px;
+  background: var(--ink);
+  border-radius: 34px;
+  box-shadow: 0 24px 70px rgba(16, 16, 20, 0.22);
+}
+
+.product-video-frame::before {
+  content: "";
+  display: block;
+  width: 112px;
+  height: 16px;
+  margin: 2px auto 8px;
+  background: #050507;
+  border-radius: 999px;
+}
+
+.product-video-frame video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 25px;
+  pointer-events: none;
+}
+
 .lifestyle-break {
   margin-top: -28px;
   margin-bottom: -20px;
@@ -825,11 +870,33 @@ h3 {
 .price-panel {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 26px;
   background:
     linear-gradient(135deg, rgba(239, 232, 255, 0.7), rgba(255, 255, 255, 0.76)),
     var(--white);
+}
+
+.pricing-preview {
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.preview-label {
+  display: inline-flex;
+  margin-bottom: 10px;
+  padding: 7px 10px;
+  color: var(--ink);
+  background: var(--gold-soft);
+  border: 1px solid rgba(198, 161, 91, 0.34);
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.price-panel .product-video-frame {
+  width: min(100%, 260px);
 }
 
 .price-label {
