@@ -3,8 +3,8 @@ const LEMON_CHECKOUT_URL = "PASTE_LEMON_SQUEEZY_CHECKOUT_URL_HERE";
 const checkoutButtons = document.querySelectorAll(".js-checkout");
 const pricingSection = document.querySelector("#pricing");
 const year = document.querySelector("#year");
-const protectedMedia = document.querySelectorAll("img, video");
 const previewVideos = document.querySelectorAll(".product-video-frame video");
+const isTikTokWebView = /tiktok|musical_ly|bytedance|bytedancewebview|aweme/i.test(navigator.userAgent);
 
 function hasLiveCheckoutUrl(url) {
   return /^https:\/\/.+/i.test(url) && !url.includes("PASTE_LEMON");
@@ -23,14 +23,48 @@ checkoutButtons.forEach((button) => {
   button.addEventListener("click", openCheckout);
 });
 
-protectedMedia.forEach((media) => {
+function protectMediaElement(media) {
   media.setAttribute("draggable", "false");
   media.addEventListener("contextmenu", (event) => event.preventDefault());
   media.addEventListener("dragstart", (event) => event.preventDefault());
-});
+}
+
+function replacePreviewVideosForTikTok() {
+  if (!isTikTokWebView) {
+    return;
+  }
+
+  previewVideos.forEach((video) => {
+    const fallbackSrc = video.dataset.tiktokFallback;
+    if (!fallbackSrc) {
+      return;
+    }
+
+    const fallbackImage = document.createElement("img");
+    fallbackImage.src = fallbackSrc;
+    fallbackImage.alt = video.getAttribute("aria-label") || "Flip-through preview of the guide";
+    fallbackImage.width = video.videoWidth || 420;
+    fallbackImage.height = video.videoHeight || 860;
+    fallbackImage.loading = "lazy";
+    fallbackImage.decoding = "async";
+    protectMediaElement(fallbackImage);
+    video.replaceWith(fallbackImage);
+  });
+}
+
+document.querySelectorAll("img, video").forEach(protectMediaElement);
+replacePreviewVideosForTikTok();
 
 function playPreviewVideos() {
+  if (isTikTokWebView) {
+    return;
+  }
+
   previewVideos.forEach((video) => {
+    if (!video.isConnected) {
+      return;
+    }
+
     video.muted = true;
     video.defaultMuted = true;
     video.playsInline = true;

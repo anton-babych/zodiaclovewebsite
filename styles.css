@@ -591,7 +591,8 @@ h3 {
   transform: translateX(-50%);
 }
 
-.product-video-frame video {
+.product-video-frame video,
+.product-video-frame img {
   display: block;
   width: 100%;
   aspect-ratio: 9 / 16;
