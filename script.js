@@ -30,26 +30,95 @@ function protectMediaElement(media) {
   media.addEventListener("dragstart", (event) => event.preventDefault());
 }
 
+function buildFrameSources(video) {
+  const base = video.dataset.tiktokFrameBase;
+  const count = Number.parseInt(video.dataset.tiktokFrameCount || "0", 10);
+  const extension = video.dataset.tiktokFrameExt || ".jpg";
+  const version = video.dataset.tiktokFrameVersion;
+
+  if (!base || !count) {
+    return [];
+  }
+
+  return Array.from({ length: count }, (_, index) => {
+    const frameNumber = String(index + 1).padStart(4, "0");
+    const cacheBust = version ? `?v=${version}` : "";
+    return `${base}${frameNumber}${extension}${cacheBust}`;
+  });
+}
+
+function animateFramePreview(image, sources, fps) {
+  if (!sources.length) {
+    return;
+  }
+
+  const loadedFrames = new Set([0]);
+  const frameDuration = 1000 / fps;
+  let activeFrame = 0;
+  let startTime = 0;
+
+  sources.forEach((source, index) => {
+    const preloadImage = new Image();
+    preloadImage.onload = () => loadedFrames.add(index);
+    preloadImage.src = source;
+  });
+
+  function tick(timestamp) {
+    if (!image.isConnected) {
+      return;
+    }
+
+    if (!startTime) {
+      startTime = timestamp;
+    }
+
+    if (!document.hidden) {
+      const nextFrame = Math.floor((timestamp - startTime) / frameDuration) % sources.length;
+      if (nextFrame !== activeFrame && loadedFrames.has(nextFrame)) {
+        image.src = sources[nextFrame];
+        activeFrame = nextFrame;
+      }
+    }
+
+    window.requestAnimationFrame(tick);
+  }
+
+  window.requestAnimationFrame(tick);
+}
+
 function replacePreviewVideosForTikTok() {
   if (!isTikTokWebView) {
     return;
   }
 
   previewVideos.forEach((video) => {
-    const fallbackSrc = video.dataset.tiktokFallback;
+    const frameSources = buildFrameSources(video);
+    const fallbackSrc = frameSources[0] || video.dataset.tiktokFallback;
     if (!fallbackSrc) {
       return;
     }
 
     const fallbackImage = document.createElement("img");
     fallbackImage.src = fallbackSrc;
+    fallbackImage.onerror = () => {
+      const posterFallback = video.dataset.tiktokFallback;
+      if (posterFallback && !fallbackImage.dataset.fallbackUsed) {
+        fallbackImage.dataset.fallbackUsed = "true";
+        fallbackImage.src = posterFallback;
+      }
+    };
     fallbackImage.alt = video.getAttribute("aria-label") || "Flip-through preview of the guide";
     fallbackImage.width = video.videoWidth || 360;
     fallbackImage.height = video.videoHeight || 640;
-    fallbackImage.loading = "lazy";
+    fallbackImage.loading = "eager";
     fallbackImage.decoding = "async";
     protectMediaElement(fallbackImage);
     video.replaceWith(fallbackImage);
+
+    if (frameSources.length) {
+      const fps = Number.parseFloat(video.dataset.tiktokFrameFps || "16");
+      animateFramePreview(fallbackImage, frameSources, fps || 16);
+    }
   });
 }
 
