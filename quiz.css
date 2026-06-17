@@ -48,7 +48,8 @@
 #step-2 {
   padding: 0;
   height: 100vh;
-  overflow: hidden; /* prevent the whole step from scrolling */
+  height: 100dvh; /* dynamic viewport height — accounts for mobile browser bars */
+  overflow: hidden;
 }
 
 .step-container.active {
@@ -260,9 +261,11 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 8px 24px 240px 24px; /* bottom space for choices panel */
-  overflow-y: auto;   /* only the chat area scrolls */
+  padding: 8px 24px 200px 24px; /* bottom space for choices panel */
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  /* Ensure messages start from top, not stretched */
+  align-content: flex-start;
 }
 
 .msg-wrapper {
@@ -343,23 +346,27 @@
   50% { transform: translateY(-4px); opacity: 1; }
 }
 
-/* Choices */
+/* Choices — fixed to the bottom of the visible viewport, centered on desktop */
 .choices-container {
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  width: 100%;
+  max-width: 480px;
   background: #fff;
-  padding: 16px 24px 32px 24px;
+  padding: 16px 24px 40px 24px;
   box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  transform: translateY(100%);
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  z-index: 20;
+  z-index: 100;
+  box-sizing: border-box;
 }
 
-.choices-container.active { transform: translateY(0); }
+.choices-container.active {
+  transform: translateX(-50%) translateY(0);
+}
 
 .choice-prompt {
   font-size: 13px;
