@@ -245,7 +245,7 @@ function appendMessage(text, type, status = '') {
   }
 
   chatWindow.appendChild(wrapper);
-  window.scrollTo(0, document.body.scrollHeight);
+  chatWindow.scrollTop = chatWindow.scrollHeight;
 }
 
 function showTypingIndicator() {

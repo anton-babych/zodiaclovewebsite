@@ -24,6 +24,7 @@
   display: flex;
   justify-content: center;
   min-height: 100vh;
+  min-height: 100dvh;
 }
 
 #app-container {
@@ -31,6 +32,7 @@
   max-width: 480px; /* Mobile-first container */
   background: #fff;
   min-height: 100vh;
+  min-height: 100dvh;
   box-shadow: 0 0 20px rgba(0,0,0,0.05);
   position: relative;
   overflow: hidden;
@@ -41,6 +43,7 @@
   padding: 24px;
   flex-direction: column;
   min-height: 100vh;
+  min-height: 100dvh;
   box-sizing: border-box;
 }
 
@@ -355,7 +358,7 @@
   width: 100%;
   max-width: 480px;
   background: #fff;
-  padding: 16px 24px 40px 24px;
+  padding: 16px 24px calc(24px + env(safe-area-inset-bottom)) 24px;
   box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
