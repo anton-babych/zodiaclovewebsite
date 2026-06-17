@@ -4,7 +4,8 @@ const checkoutButtons = document.querySelectorAll(".js-checkout");
 const pricingSection = document.querySelector("#pricing");
 const year = document.querySelector("#year");
 const previewVideos = document.querySelectorAll(".product-video-frame video");
-const isTikTokWebView = /tiktok|musical_ly|bytedance|bytedancewebview|aweme/i.test(navigator.userAgent);
+const forceTikTokPreview = new URLSearchParams(window.location.search).has("tiktok-preview");
+const isTikTokWebView = forceTikTokPreview || /tiktok|musical_ly|bytedance|bytedancewebview|aweme/i.test(navigator.userAgent);
 
 function hasLiveCheckoutUrl(url) {
   return /^https:\/\/.+/i.test(url) && !url.includes("PASTE_LEMON");
@@ -43,8 +44,8 @@ function replacePreviewVideosForTikTok() {
     const fallbackImage = document.createElement("img");
     fallbackImage.src = fallbackSrc;
     fallbackImage.alt = video.getAttribute("aria-label") || "Flip-through preview of the guide";
-    fallbackImage.width = video.videoWidth || 420;
-    fallbackImage.height = video.videoHeight || 860;
+    fallbackImage.width = video.videoWidth || 360;
+    fallbackImage.height = video.videoHeight || 640;
     fallbackImage.loading = "lazy";
     fallbackImage.decoding = "async";
     protectMediaElement(fallbackImage);
