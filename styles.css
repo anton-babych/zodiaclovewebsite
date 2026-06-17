@@ -596,7 +596,8 @@ h3 {
   display: block;
   width: 100%;
   aspect-ratio: 9 / 16;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--white);
   border-radius: 32px;
   pointer-events: none;
 }
