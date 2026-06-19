@@ -38,80 +38,77 @@
             <button type="button" class="cta-button next-btn">Next</button>
           </div>
           
-          <!-- Q2: Her Sign -->
+          <!-- Q2: User Sign -->
           <div class="form-step hidden" data-step="2">
             <div class="form-group">
-              <label for="user-sign">What is your zodiac sign?</label>
-              <select id="user-sign" required>
-                <option value="" disabled selected>Select your sign...</option>
-                <option value="Aries">Aries</option>
-                <option value="Taurus">Taurus</option>
-                <option value="Gemini">Gemini</option>
-                <option value="Cancer">Cancer</option>
-                <option value="Leo">Leo</option>
-                <option value="Virgo">Virgo</option>
-                <option value="Libra">Libra</option>
-                <option value="Scorpio">Scorpio</option>
-                <option value="Sagittarius">Sagittarius</option>
-                <option value="Capricorn">Capricorn</option>
-                <option value="Aquarius">Aquarius</option>
-                <option value="Pisces">Pisces</option>
-              </select>
+              <label>What is your zodiac sign?</label>
+              <input type="hidden" id="user-sign" required>
+              <div class="options-grid" data-target="user-sign">
+                <button type="button" class="option-btn" data-value="Aries">♈ Aries</button>
+                <button type="button" class="option-btn" data-value="Taurus">♉ Taurus</button>
+                <button type="button" class="option-btn" data-value="Gemini">♊ Gemini</button>
+                <button type="button" class="option-btn" data-value="Cancer">♋ Cancer</button>
+                <button type="button" class="option-btn" data-value="Leo">♌ Leo</button>
+                <button type="button" class="option-btn" data-value="Virgo">♍ Virgo</button>
+                <button type="button" class="option-btn" data-value="Libra">♎ Libra</button>
+                <button type="button" class="option-btn" data-value="Scorpio">♏ Scorpio</button>
+                <button type="button" class="option-btn" data-value="Sagittarius">♐ Sagittarius</button>
+                <button type="button" class="option-btn" data-value="Capricorn">♑ Capricorn</button>
+                <button type="button" class="option-btn" data-value="Aquarius">♒ Aquarius</button>
+                <button type="button" class="option-btn" data-value="Pisces">♓ Pisces</button>
+              </div>
             </div>
-            <button type="button" class="cta-button next-btn">Next</button>
           </div>
 
-          <!-- Q3: His Sign -->
+          <!-- Q3: Crush Sign -->
           <div class="form-step hidden" data-step="3">
             <div class="form-group">
-              <label for="crush-sign">What is his zodiac sign?</label>
-              <select id="crush-sign" required>
-                <option value="" disabled selected>Select his sign...</option>
-                <option value="Aries">Aries</option>
-                <option value="Taurus">Taurus</option>
-                <option value="Gemini">Gemini</option>
-                <option value="Cancer">Cancer</option>
-                <option value="Leo">Leo</option>
-                <option value="Virgo">Virgo</option>
-                <option value="Libra">Libra</option>
-                <option value="Scorpio">Scorpio</option>
-                <option value="Sagittarius">Sagittarius</option>
-                <option value="Capricorn">Capricorn</option>
-                <option value="Aquarius">Aquarius</option>
-                <option value="Pisces">Pisces</option>
-              </select>
+              <label>What is his zodiac sign?</label>
+              <input type="hidden" id="crush-sign" required>
+              <div class="options-grid" data-target="crush-sign">
+                <button type="button" class="option-btn" data-value="Aries">♈ Aries</button>
+                <button type="button" class="option-btn" data-value="Taurus">♉ Taurus</button>
+                <button type="button" class="option-btn" data-value="Gemini">♊ Gemini</button>
+                <button type="button" class="option-btn" data-value="Cancer">♋ Cancer</button>
+                <button type="button" class="option-btn" data-value="Leo">♌ Leo</button>
+                <button type="button" class="option-btn" data-value="Virgo">♍ Virgo</button>
+                <button type="button" class="option-btn" data-value="Libra">♎ Libra</button>
+                <button type="button" class="option-btn" data-value="Scorpio">♏ Scorpio</button>
+                <button type="button" class="option-btn" data-value="Sagittarius">♐ Sagittarius</button>
+                <button type="button" class="option-btn" data-value="Capricorn">♑ Capricorn</button>
+                <button type="button" class="option-btn" data-value="Aquarius">♒ Aquarius</button>
+                <button type="button" class="option-btn" data-value="Pisces">♓ Pisces</button>
+              </div>
             </div>
-            <button type="button" class="cta-button next-btn">Next</button>
           </div>
 
-          <!-- Q4: Time Talking -->
+          <!-- Q4: Vibe -->
           <div class="form-step hidden" data-step="4">
             <div class="form-group">
-              <label for="time-talking">How long have you been talking?</label>
-              <select id="time-talking" required>
-                <option value="" disabled selected>Select an option...</option>
-                <option value="days">A few days</option>
-                <option value="weeks">A few weeks</option>
-                <option value="months">A few months</option>
-                <option value="situationship">Forever (Situationship)</option>
-              </select>
+              <label>What is his current vibe right now?</label>
+              <input type="hidden" id="vibe" required>
+              <div class="options-list" data-target="vibe">
+                <button type="button" class="option-btn" data-value="ignored">He left me on 'read' or ignores me.</button>
+                <button type="button" class="option-btn" data-value="hotcold">Hot & Cold (obsessed yesterday, distant today).</button>
+                <button type="button" class="option-btn" data-value="friends">He acts like we are just "friends".</button>
+                <button type="button" class="option-btn" data-value="stonewalling">We fought and he is stonewalling me.</button>
+              </div>
             </div>
-            <button type="button" class="cta-button next-btn">Next</button>
           </div>
 
           <!-- Q5: Goal -->
           <div class="form-step hidden" data-step="5">
             <div class="form-group">
-              <label for="goal">What's your ultimate goal?</label>
-              <select id="goal" required>
-                <option value="" disabled selected>Select a goal...</option>
-                <option value="obsess">Make him obsess</option>
-                <option value="apologize">Make him apologize</option>
-                <option value="chase">Make him chase again</option>
-                <option value="commit">Make him commit</option>
-              </select>
+              <label>What's your ultimate goal?</label>
+              <input type="hidden" id="goal" required>
+              <div class="options-list" data-target="goal">
+                <button type="button" class="option-btn" data-value="obsess">Make him obsess</button>
+                <button type="button" class="option-btn" data-value="apologize">Make him apologize</button>
+                <button type="button" class="option-btn" data-value="chase">Make him chase again</button>
+                <button type="button" class="option-btn" data-value="commit">Make him commit</button>
+              </div>
             </div>
-            <button type="submit" class="cta-button">Start Analysis</button>
+            <button type="submit" id="final-submit" class="cta-button" style="display: none;">Start Analysis</button>
           </div>
         </form>
 

@@ -167,25 +167,55 @@ function updateFormProgress() {
   onboardingProgress.style.width = `${percent}%`;
 }
 
-nextBtns.forEach((btn, index) => {
+function advanceFormStep() {
+  formSteps[currentFormStep].classList.remove('active');
+  formSteps[currentFormStep].classList.add('hidden');
+  
+  currentFormStep++;
+  
+  if (currentFormStep < formSteps.length) {
+    formSteps[currentFormStep].classList.remove('hidden');
+    formSteps[currentFormStep].classList.add('active');
+    updateFormProgress();
+  }
+}
+
+nextBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
     // Basic validation
-    const input = formSteps[currentFormStep].querySelector('input, select');
+    const input = formSteps[currentFormStep].querySelector('input');
     if (!input.value) {
       input.style.borderColor = 'red';
       return;
     }
     input.style.borderColor = '#ddd';
+    advanceFormStep();
+  });
+});
 
-    // Move to next step
-    formSteps[currentFormStep].classList.remove('active');
-    formSteps[currentFormStep].classList.add('hidden');
+// Handle chunky option buttons
+const optionBtns = document.querySelectorAll('.option-btn');
+optionBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const container = btn.closest('.options-grid, .options-list');
+    const targetId = container.dataset.target;
+    const input = document.getElementById(targetId);
     
-    currentFormStep++;
+    // Visual selection
+    container.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
     
-    formSteps[currentFormStep].classList.remove('hidden');
-    formSteps[currentFormStep].classList.add('active');
-    updateFormProgress();
+    // Set value
+    input.value = btn.dataset.value;
+    
+    // Auto advance
+    setTimeout(() => {
+      if (targetId === 'goal') {
+        document.getElementById('final-submit').click();
+      } else {
+        advanceFormStep();
+      }
+    }, 150);
   });
 });
 
@@ -196,7 +226,7 @@ form.addEventListener('submit', (e) => {
   state.userName = document.getElementById('user-name').value;
   state.userSign = document.getElementById('user-sign').value;
   state.crushSign = document.getElementById('crush-sign').value;
-  state.timeTalking = document.getElementById('time-talking').value;
+  state.vibe = document.getElementById('vibe').value;
   state.goal = document.getElementById('goal').value;
 
   chatTitle.innerText = `${state.crushSign} 🔮`;
