@@ -1,6 +1,6 @@
 {
   "cleanUrls": true,
-  "rewrites": [
-    { "source": "/quiz", "destination": "/quiz.html" }
+  "redirects": [
+    { "source": "/quiz", "destination": "/", "permanent": true }
   ]
 }

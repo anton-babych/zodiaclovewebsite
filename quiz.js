@@ -444,9 +444,10 @@ document.getElementById('btn-panic').addEventListener('click', () => {
   loading.classList.remove('hidden');
   
   // Dynamic text rotation
-  setTimeout(() => loadingText.innerText = `Analyzing ${state.crushSign} compatibility...`, 1500);
-  setTimeout(() => loadingText.innerText = "Identifying attachment pattern...", 2800);
-  setTimeout(() => loadingText.innerText = "Generating Mistake Report...", 4000);
+  setTimeout(() => loadingText.innerText = `Analyzing ${state.crushSign} psychology...`, 1500);
+  setTimeout(() => loadingText.innerText = "Identifying attachment pattern...", 3000);
+  setTimeout(() => loadingText.innerText = "Cross-referencing behavioral flags...", 4500);
+  setTimeout(() => loadingText.innerText = "Generating Mistake Report...", 6000);
 
   // Populate Roast
   const data = zodiacData[state.crushSign] || genericData;
@@ -458,7 +459,7 @@ document.getElementById('btn-panic').addEventListener('click', () => {
     loading.classList.add('hidden');
     switchStep(step3, step4);
     window.scrollTo(0,0);
-  }, 5000); // 5 seconds wait to build anticipation
+  }, 7500); // 7.5 seconds wait to build anticipation
 });
 
 // --- STEP 5: PAYWALL ---

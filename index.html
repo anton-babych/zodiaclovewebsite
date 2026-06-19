@@ -2,393 +2,271 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta name="theme-color" content="#fffcf8">
-    <meta
-      name="description"
-      content="A brutally honest astro-bestie guide to dating, texting, and surviving every zodiac sign without excusing toxic behavior."
-    >
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="The Complete Guide to Dating Each Zodiac Sign">
-    <meta
-      property="og:description"
-      content="Copy-paste texts, red flags, date ideas, and what to say, do, and avoid for every zodiac sign."
-    >
-    <meta property="og:image" content="assets/maya-selfie.webp">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="The Complete Guide to Dating Each Zodiac Sign">
-    <meta
-      name="twitter:description"
-      content="Stop decoding mixed signals alone. Maya has the zodiac receipts."
-    >
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="preload" as="image" href="assets/maya-selfie.webp" type="image/webp" fetchpriority="high">
+    <title>Maya | Fix Your Texts</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap"
-      rel="stylesheet"
-    >
-    <link rel="stylesheet" href="styles.css?v=11">
-    <title>The Complete Guide to Dating Each Zodiac Sign</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="quiz.css">
   </head>
-  <body>
-    <header class="site-header" aria-label="Primary">
-      <a class="brand" href="#top" aria-label="Maya Zodiac Dating home">
-        <span class="brand-mark" aria-hidden="true">M</span>
-        <span>Maya | Zodiac Dating</span>
-      </a>
-      <nav class="nav-links" aria-label="Page sections">
-        <a href="#inside">Inside</a>
-        <a href="#maya">Maya</a>
-        <a href="#pricing">Get it</a>
-      </nav>
-    </header>
-
-    <main id="top">
-      <section class="hero section-shell" data-section="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">The brutally honest astro-bestie guide</p>
-          <h1>Stop crying over a Gemini. Text him like you read the manual.</h1>
-          <p class="hero-subhead">
-            A practical <span>copy-paste guide</span> to dating, texting, and surviving every zodiac sign, with the exact words to send and the standards to keep.
-          </p>
-          <div class="hero-actions">
-            <button class="cta-button js-checkout" type="button">Get the Guide</button>
-            <a class="text-link" href="#inside">Peek inside</a>
-          </div>
-          <div class="trust-strip" aria-label="Guide highlights">
-            <span><span class="trust-mark trust-mark-hot" aria-hidden="true">103</span>pages</span>
-            <span><span class="trust-mark" aria-hidden="true">&#9802;</span>12 signs</span>
-            <span><span class="trust-mark" aria-hidden="true">Aa</span>Text scripts</span>
-            <span><span class="trust-mark trust-mark-hot" aria-hidden="true">!</span>Red flags</span>
+  <body class="quiz-body">
+    <main id="app-container">
+      
+      <!-- STEP 1: ONBOARDING MULTI-STEP -->
+      <section id="step-1" class="step-container active">
+        <div class="onboarding-header">
+          <img src="assets/maya-author.webp" alt="Maya" class="maya-avatar-large">
+          <h1>Hey, I’m Maya.</h1>
+          <p>I'm tired of watching cool girls lose their minds over mixed signals. Let’s fix your texts.</p>
+        </div>
+        
+        <div class="onboarding-progress-container">
+          <div class="onboarding-progress-bg">
+            <div id="onboarding-progress" class="onboarding-progress-fill"></div>
           </div>
         </div>
 
-        <div class="hero-visual" aria-label="Maya mirror selfie">
-          <img class="hero-photo" src="assets/maya-selfie.webp" alt="Maya taking a mirror selfie" width="1200" height="1608" fetchpriority="high">
-          <div class="floating-note note-one">
-            <span class="note-kicker">Maya says</span>
-            <strong>Text him like you meant it.</strong>
-          </div>
-          <div class="floating-note note-two">
-            <span class="note-kicker">The vibe</span>
-            <strong>Pretty charts. Real standards.</strong>
-          </div>
-        </div>
-      </section>
-
-      <section class="problem section-shell section-pad" data-section="problem">
-        <div class="section-heading">
-          <p class="eyebrow">Modern dating is doing the most</p>
-          <h2>He ghosted you? Let me guess, he is an Aquarius.</h2>
-        </div>
-        <div class="scenario-list">
-          <article class="scenario-card">
-            <span class="scenario-tag"><span class="scenario-dot" aria-hidden="true"></span>The chat</span>
-            <p><mark>"Hey stranger"</mark> after <strong>19 days</strong> of silence, like your phone did not just raise you as a single mother.</p>
-          </article>
-          <article class="scenario-card">
-            <span class="scenario-tag"><span class="scenario-dot scenario-dot-gold" aria-hidden="true"></span>The date</span>
-            <p>He says he is <mark>"bad at labels"</mark> but somehow excellent at posting <strong>thirst traps</strong> for public relations.</p>
-          </article>
-          <article class="scenario-card">
-            <span class="scenario-tag"><span class="scenario-dot scenario-dot-hot" aria-hidden="true"></span>The excuse</span>
-            <p>We love astrology. We are still not making excuses because <mark>Mercury is in a microwave.</mark></p>
-          </article>
-        </div>
-        <p class="big-line">
-          You do not need another vague horoscope. You need <span>the words, the timing, and the standards.</span>
-        </p>
-      </section>
-
-      <section id="inside" class="inside section-shell section-pad" data-section="inside">
-        <div class="section-heading">
-          <p class="eyebrow">What is inside</p>
-          <h2>A sign-by-sign dating cheat sheet with actual sentences.</h2>
-          <p>
-            Built from the guide structure: Heart Key, what to say, what to do, what to avoid, date ideas, gift ideas, text templates, and healthy boundaries.
-          </p>
-        </div>
-
-        <div class="feature-grid">
-          <article class="feature-card">
-            <span class="feature-icon" aria-hidden="true">Aa</span>
-            <h3>Copy-paste text scripts</h3>
-            <p>Send the confident version of what you meant, without spiraling in Notes for 45 minutes.</p>
-          </article>
-          <article class="feature-card">
-            <span class="feature-icon" aria-hidden="true">!!</span>
-            <h3>Red flags and green lights</h3>
-            <p>Know the difference between cute sign behavior and someone testing your boundaries for sport.</p>
-          </article>
-          <article class="feature-card">
-            <span class="feature-icon" aria-hidden="true">01</span>
-            <h3>First-date cheat sheets</h3>
-            <p>Plan dates that match their sign without trying too hard or becoming their unpaid therapist.</p>
-          </article>
-          <article class="feature-card">
-            <span class="feature-icon" aria-hidden="true">12</span>
-            <h3>Every zodiac sign covered</h3>
-            <p>Aries fire, Taurus comfort, Gemini chaos, Scorpio intensity, Pisces feelings. All of it.</p>
-          </article>
-        </div>
-
-        <div class="zodiac-board" aria-label="All zodiac signs covered">
-          <span>&#9800; Aries</span>
-          <span>&#9801; Taurus</span>
-          <span>&#9802; Gemini</span>
-          <span>&#9803; Cancer</span>
-          <span>&#9804; Leo</span>
-          <span>&#9805; Virgo</span>
-          <span>&#9806; Libra</span>
-          <span>&#9807; Scorpio</span>
-          <span>&#9808; Sagittarius</span>
-          <span>&#9809; Capricorn</span>
-          <span>&#9810; Aquarius</span>
-          <span>&#9811; Pisces</span>
-        </div>
-      </section>
-
-      <section class="lifestyle-break section-shell" aria-label="Maya lifestyle portrait">
-        <figure class="lifestyle-frame">
-          <img src="assets/maya-lifestyle.webp" alt="Maya wearing headphones in a tropical setting" width="1200" height="1608" loading="lazy">
-          <figcaption>
-            <span>Pretty astrology. Hard standards.</span>
-            <strong>The chart is cute. The boundary is hotter.</strong>
-          </figcaption>
-        </figure>
-      </section>
-
-      <section class="anti-toxic section-shell section-pad" data-section="not-toxic">
-        <div class="section-heading">
-          <p class="eyebrow">What this is not</p>
-          <h2>No toxic astrology. No romanticizing nonsense.</h2>
-        </div>
-        <div class="not-list">
-          <div class="not-item">
-            <span aria-hidden="true">No.</span>
-            <p>Not "he is emotionally unavailable because he is a Scorpio rising."</p>
-          </div>
-          <div class="not-item">
-            <span aria-hidden="true">No.</span>
-            <p>Not manipulation scripts dressed up as feminine energy.</p>
-          </div>
-          <div class="not-item">
-            <span aria-hidden="true">No.</span>
-            <p>Not a license to chase someone who already showed you the exit sign.</p>
-          </div>
-        </div>
-        <div class="truth-box">
-          <p>
-            Astrology is the pattern language. Your boundaries are still the law.
-          </p>
-        </div>
-      </section>
-
-      <section id="maya" class="maya section-shell section-pad" data-section="maya">
-        <div class="maya-card">
-          <div class="maya-topline">
-            <div class="maya-avatar" aria-label="Maya author portrait">
-              <img src="assets/maya-author.webp" alt="Maya, the Zodiac Dating astro-bestie" width="900" height="1206" loading="lazy">
+        <form id="onboarding-form" class="onboarding-form">
+          <!-- Q1: Name -->
+          <div class="form-step active" data-step="1">
+            <div class="form-group">
+              <label for="user-name">First things first, what's your name?</label>
+              <input type="text" id="user-name" placeholder="e.g. Jessica" required>
             </div>
-            <div>
-              <p class="eyebrow">Meet your astro-bestie</p>
-              <h2>Maya tells you what to text before the group chat starts yelling.</h2>
+            <button type="button" class="cta-button next-btn">Next</button>
+          </div>
+          
+          <!-- Q2: User Sign -->
+          <div class="form-step hidden" data-step="2">
+            <div class="form-group">
+              <label>What is your zodiac sign?</label>
+              <input type="hidden" id="user-sign" required>
+              <div class="options-grid" data-target="user-sign">
+                <button type="button" class="option-btn" data-value="Aries">♈ Aries</button>
+                <button type="button" class="option-btn" data-value="Taurus">♉ Taurus</button>
+                <button type="button" class="option-btn" data-value="Gemini">♊ Gemini</button>
+                <button type="button" class="option-btn" data-value="Cancer">♋ Cancer</button>
+                <button type="button" class="option-btn" data-value="Leo">♌ Leo</button>
+                <button type="button" class="option-btn" data-value="Virgo">♍ Virgo</button>
+                <button type="button" class="option-btn" data-value="Libra">♎ Libra</button>
+                <button type="button" class="option-btn" data-value="Scorpio">♏ Scorpio</button>
+                <button type="button" class="option-btn" data-value="Sagittarius">♐ Sagittarius</button>
+                <button type="button" class="option-btn" data-value="Capricorn">♑ Capricorn</button>
+                <button type="button" class="option-btn" data-value="Aquarius">♒ Aquarius</button>
+                <button type="button" class="option-btn" data-value="Pisces">♓ Pisces</button>
+              </div>
             </div>
           </div>
 
-          <p class="maya-lead">
-            <strong>She is the friend who says: send this, stop explaining, go live your life.</strong>
-            Pretty astro, practical receipts, zero tolerance for clown behavior.
-          </p>
-
-          <div class="maya-list-grid">
-            <div class="maya-list-card maya-list-yes">
-              <h3>With Maya, you get:</h3>
-              <ul>
-                <li><span aria-hidden="true">✅</span><p>The text when he goes vague.</p></li>
-                <li><span aria-hidden="true">✅</span><p>The move each sign responds to.</p></li>
-                <li><span aria-hidden="true">✅</span><p>The boundary that keeps you unbothered.</p></li>
-              </ul>
-            </div>
-
-            <div class="maya-list-card maya-list-no">
-              <h3>No more:</h3>
-              <ul>
-                <li><span class="no-badge" aria-hidden="true">!</span><p>2 AM TikTok searches.</p></li>
-                <li><span class="no-badge" aria-hidden="true">!</span><p>Bare minimum as "water sign energy."</p></li>
-                <li><span class="no-badge" aria-hidden="true">!</span><p>Group chat essays over one dry text.</p></li>
-              </ul>
+          <!-- Q3: Crush Sign -->
+          <div class="form-step hidden" data-step="3">
+            <div class="form-group">
+              <label>What is his zodiac sign?</label>
+              <input type="hidden" id="crush-sign" required>
+              <div class="options-grid" data-target="crush-sign">
+                <button type="button" class="option-btn" data-value="Aries">♈ Aries</button>
+                <button type="button" class="option-btn" data-value="Taurus">♉ Taurus</button>
+                <button type="button" class="option-btn" data-value="Gemini">♊ Gemini</button>
+                <button type="button" class="option-btn" data-value="Cancer">♋ Cancer</button>
+                <button type="button" class="option-btn" data-value="Leo">♌ Leo</button>
+                <button type="button" class="option-btn" data-value="Virgo">♍ Virgo</button>
+                <button type="button" class="option-btn" data-value="Libra">♎ Libra</button>
+                <button type="button" class="option-btn" data-value="Scorpio">♏ Scorpio</button>
+                <button type="button" class="option-btn" data-value="Sagittarius">♐ Sagittarius</button>
+                <button type="button" class="option-btn" data-value="Capricorn">♑ Capricorn</button>
+                <button type="button" class="option-btn" data-value="Aquarius">♒ Aquarius</button>
+                <button type="button" class="option-btn" data-value="Pisces">♓ Pisces</button>
+              </div>
             </div>
           </div>
 
-          <p class="maya-signoff">
-            Pretty charts. Clear texts. Standards intact. 💫
-          </p>
+          <!-- Q4: Vibe -->
+          <div class="form-step hidden" data-step="4">
+            <div class="form-group">
+              <label>What is his current vibe right now?</label>
+              <input type="hidden" id="vibe" required>
+              <div class="options-list" data-target="vibe">
+                <button type="button" class="option-btn" data-value="ignored">He left me on 'read' or ignores me.</button>
+                <button type="button" class="option-btn" data-value="hotcold">Hot & Cold (obsessed yesterday, distant today).</button>
+                <button type="button" class="option-btn" data-value="friends">He acts like we are just "friends".</button>
+                <button type="button" class="option-btn" data-value="stonewalling">We fought and he is stonewalling me.</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q5: Goal -->
+          <div class="form-step hidden" data-step="5">
+            <div class="form-group">
+              <label>What's your ultimate goal?</label>
+              <input type="hidden" id="goal" required>
+              <div class="options-list" data-target="goal">
+                <button type="button" class="option-btn" data-value="obsess">Make him obsess</button>
+                <button type="button" class="option-btn" data-value="apologize">Make him apologize</button>
+                <button type="button" class="option-btn" data-value="chase">Make him chase again</button>
+                <button type="button" class="option-btn" data-value="commit">Make him commit</button>
+              </div>
+            </div>
+            <button type="submit" id="final-submit" class="cta-button" style="display: none;">Start Analysis</button>
+          </div>
+        </form>
+
+        <div class="loading-overlay hidden" id="loading-overlay">
+          <div class="spinner"></div>
+          <p id="loading-text">Analyzing patterns...</p>
         </div>
       </section>
 
-      <section id="reviews" class="reviews section-shell section-pad" data-section="reviews">
-        <div class="section-heading">
+      <!-- STEP 2: CHAT SIMULATION -->
+      <section id="step-2" class="step-container hidden">
+        <div class="imessage-header">
+          <div class="imessage-back">‹</div>
+          <div class="imessage-contact">
+            <div class="imessage-avatar">
+              <img id="crush-avatar" src="assets/crush-avatar.jpg" alt="Him" onerror="this.style.display='none'">
+            </div>
+            <span id="chat-title">Him</span>
+            <small>iMessage</small>
+          </div>
+          <div class="imessage-info">ⓘ</div>
+        </div>
+        
+        <div class="progress-container">
+          <div class="progress-bar-bg">
+            <div id="progress-bar" class="progress-bar-fill"></div>
+          </div>
+          <div class="progress-text"><span id="progress-label">His Obsession Level</span>: <span id="progress-text-value">0%</span></div>
+        </div>
+
+        <div id="chat-window" class="chat-window">
+          <!-- Chat bubbles will be injected here via JS -->
+        </div>
+
+        <div id="choices-container" class="choices-container hidden">
+          <p class="choice-prompt">Choose your reply:</p>
+          <div id="choices-list" class="choices-list"></div>
+        </div>
+      </section>
+
+      <!-- STEP 3: PANIC BUTTON -->
+      <section id="step-3" class="step-container hidden">
+        <div class="panic-wrapper">
+          <div class="panic-icon">🚨</div>
+          <h2>Error. Connection lost.</h2>
+          <p>Your last text triggered his avoidance response.</p>
+          <button id="btn-panic" class="cta-button btn-outline">Wait... what did I do wrong?!</button>
+        </div>
+        <div class="loading-overlay hidden" id="roast-loading">
+          <div class="spinner"></div>
+          <p id="roast-loading-text">Analyzing attachment style...</p>
+        </div>
+      </section>
+
+      <!-- STEP 4: MAYA'S ROAST -->
+      <section id="step-4" class="step-container hidden">
+        <div class="roast-header">
+          <img src="assets/maya-author.webp" alt="Maya" class="maya-avatar-medium">
+          <h2>Girl... we do not do that, <span id="roast-name"></span>.</h2>
+        </div>
+        <div class="roast-body">
+          <div class="insight-card">
+            <h3>The Truth:</h3>
+            <p id="roast-insight"></p>
+          </div>
+          <div class="insight-card highlight-card">
+            <h3>What you SHOULD have done:</h3>
+            <p id="roast-solution"></p>
+          </div>
+          <div class="solution-card">
+            <p>But we can fix this. You need a text that hits his hunter instinct, sets a boundary, and pulls the power back.</p>
+          </div>
+          <button id="btn-show-paywall" class="cta-button">Show me how</button>
+        </div>
+      </section>
+
+      <!-- STEP 5: PAYWALL -->
+      <section id="step-5" class="step-container hidden">
+
+        <!-- Hero photo block like main site -->
+        <div class="paywall-hero">
+          <div class="paywall-hero-visual">
+            <img src="assets/maya-selfie.webp" alt="Maya" class="paywall-hero-img">
+            <div class="paywall-floating-note">
+              <span class="note-kicker">Maya says</span>
+              <strong>You now know what went wrong.</strong>
+            </div>
+          </div>
+          <div class="paywall-hero-copy">
+            <p class="eyebrow">The fix exists</p>
+            <h2>Get the exact text that works on a <span id="paywall-sign">Scorpio</span>.</h2>
+            <p>103 pages. Every sign. Copy-paste ready. No spirals.</p>
+            <div class="paywall-trust-strip">
+              <span><span class="trust-mark-hot">103</span> pages</span>
+              <span><span class="trust-mark">♎</span> 12 signs</span>
+              <span><span class="trust-mark">Aa</span> Scripts</span>
+              <span><span class="trust-mark-hot">!</span> Red flags</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Maya's Story -->
+        <div class="maya-story-block">
+          <div class="maya-story-content">
+            <p class="eyebrow">My Story</p>
+            <h2>I used to send the 3-paragraph anxiety texts at 2 AM.</h2>
+            <p>I know exactly how it feels when he suddenly goes cold. I used to excuse their bare-minimum behavior as "water sign energy" or "he's just bad at texting".</p>
+            <p><strong>Until I learned the pattern.</strong></p>
+            <p>Astrology isn't an excuse for toxic behavior, it's a blueprint for his ego. When you know his sign, you know his weak points. When you have standards, you win.</p>
+          </div>
+        </div>
+
+        <!-- Social Proof -->
+        <div class="social-proof-block">
           <p class="eyebrow">Receipts from the group chat</p>
           <h2>One clean text. Actual plan. No spiral.</h2>
+          <figure class="dm-proof-card">
+            <img src="assets/tiktok-dm-proof.jpg" alt="Reader DM proof" width="1170" height="1061" loading="lazy">
+          </figure>
+          <p class="proof-caption">"OMG this literally worked in 10 mins."</p>
         </div>
-        <figure class="dm-proof-card">
-          <img src="assets/tiktok-dm-proof.jpg" alt="A reader DM saying the Gemini script got a reply with an actual plan and no spiral" width="1170" height="1061" loading="lazy">
-        </figure>
-      </section>
 
-      <section class="final-cta section-shell section-pad" data-section="final">
-        <div class="final-panel">
-          <p class="eyebrow">The choice is yours</p>
-          <h2>The old routine is not working.</h2>
-          <div class="choice-grid">
-            <article class="choice-card choice-card-old">
-              <span class="choice-label">Option 1</span>
-              <h3>Close this page.</h3>
-              <p>Go back to TikTok and search "why do Scorpios pull away" at 2 AM while he watches your stories.</p>
-            </article>
-            <article class="choice-card choice-card-new">
-              <span class="choice-label">Option 2</span>
-              <h3>Get the script.</h3>
-              <p>Send the exact text, hold the boundary, and finally go to sleep without making his zodiac sign your emergency.</p>
-            </article>
-          </div>
-          <p class="final-line">Same pattern, same pain. New script, new standard.</p>
-          <button class="cta-button js-checkout" type="button">Get the Guide</button>
-        </div>
-      </section>
-
-      <section id="pricing" class="pricing section-shell section-pad" data-section="pricing">
-        <div class="pricing-copy">
+        <!-- Guide Preview + Checkout -->
+        <div class="paywall-header">
           <p class="eyebrow">Instant access</p>
-          <h2>A full 103-page guide for every possible dating emergency.</h2>
-          <p>
-            One checkout, one digital guide, every sign in your pocket before the next "wyd" text hits. The guide is loaded because your situationship apparently has DLC.
-          </p>
-          <ul class="check-list">
-            <li>Instant PDF/Notion access after payment</li>
-            <li>103 mobile-friendly pages, not a tiny recycled checklist</li>
-            <li>All 12 signs in one mobile-friendly guide</li>
-            <li>Copy-paste scripts you can use from your phone</li>
-            <li>One-time launch price, no app to install</li>
-          </ul>
+          <h2>The Zodiac Love Guide</h2>
         </div>
-        <div class="price-panel">
-          <div class="pricing-preview" id="product-preview" aria-label="Flip-through preview of the 103-page guide">
-            <span class="preview-label">Real flip-through</span>
-            <div class="product-video-frame">
-              <video
-                src="assets/guide-flip-preview.mp4?v=11"
-                data-tiktok-frame-base="assets/guide-preview-frames/frame_"
-                data-tiktok-frame-count="179"
-                data-tiktok-frame-ext=".jpg"
-                data-tiktok-frame-fps="20"
-                data-tiktok-frame-version="11"
-                data-tiktok-fallback="assets/guide-flip-preview-poster.jpg?v=11"
-                poster="assets/guide-flip-preview-poster.jpg?v=11"
-                autoplay
-                muted
-                loop
-                playsinline
-                webkit-playsinline
-                preload="auto"
-                controlslist="nodownload noplaybackrate"
-                disablepictureinpicture
-              ></video>
-            </div>
+
+        <div class="guide-preview-wrapper">
+          <video
+            src="assets/guide-flip-preview.mp4?v=11"
+            poster="assets/guide-flip-preview-poster.jpg?v=11"
+            autoplay muted loop playsinline webkit-playsinline
+            class="blur-preview"
+          ></video>
+          <div class="lock-overlay">
+            <span class="lock-icon">🔒</span>
+            <p>Unlock to read</p>
           </div>
-          <span class="price-label">Launch price</span>
-          <strong>$17</strong>
-          <p>One guide. Every sign. No emotional detective work.</p>
-          <button class="cta-button js-checkout" type="button">Get the Guide</button>
-          <small>Instant digital access after secure checkout.</small>
+        </div>
+
+        <ul class="paywall-benefits">
+          <li><span>Aa</span> 103 Pages of Copy-Paste Texts</li>
+          <li><span>!</span> Red Flags for all 12 Signs</li>
+          <li><span>✋</span> How to set boundaries without sounding crazy</li>
+        </ul>
+
+        <div class="checkout-sticky">
+          <button class="cta-button js-checkout">Unlock the Guide - $17</button>
+          <p class="checkout-note">Apple Pay / Google Pay supported · Instant digital access</p>
+        </div>
+
+        <div class="honest-sales-mini">
+          <p>No fake countdowns. No "3 spots left." Digital guide — it does not sell out.</p>
         </div>
       </section>
 
-      <section class="honest-sales section-shell" data-section="honest-sales">
-        <div class="honest-panel">
-          <p class="eyebrow">Same honesty at checkout</p>
-          <h2>No fake countdowns. No "3 spots left." You are grown.</h2>
-          <p class="honest-lead">
-            Same rule as the guide: no manipulation.
-            <strong>If it helps, get it. If not, keep your standards anyway.</strong>
-          </p>
-          <div class="honest-grid" aria-label="Honest checkout promises">
-            <div class="honest-item">
-              <span class="honest-badge honest-badge-no" aria-hidden="true">!</span>
-              <p><strong>No fake scarcity.</strong> Digital guide. It does not sell out.</p>
-            </div>
-            <div class="honest-item">
-              <span class="honest-badge honest-badge-no" aria-hidden="true">!</span>
-              <p><strong>No panic timer.</strong> Your love life does not expire in 12 minutes.</p>
-            </div>
-            <div class="honest-item">
-              <span class="honest-badge honest-badge-no" aria-hidden="true">!</span>
-              <p><strong>No fake 80% off.</strong> Launch price: $17.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="faq section-shell section-pad" data-section="faq">
-        <div class="section-heading">
-          <p class="eyebrow">FAQ</p>
-          <h2>Before you check out.</h2>
-        </div>
-        <div class="faq-list">
-          <details>
-            <summary>Is this only for Sun signs?</summary>
-            <p>If you only know their Sun sign, use the guide as a practical shortcut. If you know more, look at Venus for love style, Mars for desire, and the Moon for emotional safety.</p>
-          </details>
-          <details>
-            <summary>Is this manipulative?</summary>
-            <p>No. The guide is about clearer communication, better dates, and stronger boundaries. Healthy attraction is not pressure.</p>
-          </details>
-          <details>
-            <summary>Does this work for LGBT/queer dating?</summary>
-            <p>Yes. The advice is built around communication patterns, attraction styles, date ideas, and boundaries. Use the sign guidance for any gender or relationship dynamic, then keep what fits your standards.</p>
-          </details>
-          <details>
-            <summary>Is this a physical book or digital?</summary>
-            <p>Digital. You get instant access to the PDF/Notion guide after payment, so you can pull up the exact text script before the group chat starts yelling.</p>
-          </details>
-          <details>
-            <summary>Who is it for?</summary>
-            <p>Women who are tired of confusing situationships, ghosting, vague effort, and "I am just bad at texting" as a personality trait.</p>
-          </details>
-        </div>
-      </section>
     </main>
-
-    <footer class="site-footer">
-      <div>
-        <strong>Maya | Zodiac Dating</strong>
-        <p>Astrology for flirting with standards.</p>
-      </div>
-      <div class="footer-links">
-        <a href="#inside">Inside</a>
-        <a href="#product-preview">Preview</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-        <a href="/terms/">Terms</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="/refund/">Refunds</a>
-      </div>
-      <p class="copyright">&copy; <span id="year">2026</span> Maya | Zodiac Dating</p>
-    </footer>
-
-    <div class="mobile-cta" aria-label="Sticky checkout action">
-      <button class="cta-button js-checkout" type="button">Get the 103-page Guide - $17</button>
-    </div>
-
-    <script>
-      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-      window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
-    <script defer src="/_vercel/speed-insights/script.js"></script>
-    <script src="script.js?v=11"></script>
+    <script src="quiz.js"></script>
   </body>
 </html>
