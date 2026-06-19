@@ -1,5 +1,10 @@
 // quiz.js - Logic for the interactive chat funnel
 
+// Track quiz page entry
+document.addEventListener('DOMContentLoaded', () => {
+  window.track && window.track('quiz_page_viewed');
+});
+
 const state = {
   userName: '',
   userSign: '',
@@ -210,6 +215,22 @@ function updateFormProgress() {
 }
 
 function advanceFormStep() {
+  const currentStepEl = formSteps[currentFormStep];
+  const stepNum = currentFormStep + 1;
+  
+  // Track every step completion
+  const stepData = { step: stepNum };
+  // Grab any set values for richer context
+  const signInput = document.getElementById('user-sign');
+  const crushInput = document.getElementById('crush-sign');
+  const vibeInput = document.getElementById('vibe');
+  const goalInput = document.getElementById('goal');
+  if (signInput && signInput.value) stepData.user_sign = signInput.value;
+  if (crushInput && crushInput.value) stepData.crush_sign = crushInput.value;
+  if (vibeInput && vibeInput.value) stepData.vibe = vibeInput.value;
+  if (goalInput && goalInput.value) stepData.goal = goalInput.value;
+  window.track('quiz_step_completed', stepData);
+
   formSteps[currentFormStep].classList.remove('active');
   formSteps[currentFormStep].classList.add('hidden');
   
@@ -267,6 +288,16 @@ form.addEventListener('submit', (e) => {
   state.vibe = document.getElementById('vibe').value;
   state.goal = document.getElementById('goal').value;
 
+  // Identify user by name + track submission
+  window.identifyUser(state.userName);
+  window.track('quiz_submitted', {
+    user_sign: state.userSign,
+    crush_sign: state.crushSign,
+    vibe: state.vibe,
+    goal: state.goal,
+    name_provided: !!state.userName,
+  });
+
   chatTitle.innerText = `${state.crushSign} 🔮`;
   progressLabel.innerText = goalLabels[state.goal] || 'His Obsession Level';
   
@@ -276,6 +307,10 @@ form.addEventListener('submit', (e) => {
   setTimeout(() => {
     loading.classList.add('hidden');
     switchStep(step1, step2);
+    window.track('chat_simulation_started', {
+      crush_sign: state.crushSign,
+      goal: state.goal,
+    });
     startChatSimulation();
   }, 1500);
 });
@@ -347,6 +382,12 @@ function renderChoices(choices, callback) {
     btn.onclick = () => {
       choicesContainer.classList.remove('active');
       appendMessage(text, 'sent');
+      window.track('chat_choice_made', {
+        choice_text: text,
+        impact: impact,
+        crush_sign: state.crushSign,
+        is_good_choice: impact > 0,
+      });
       callback(impact);
     };
     choicesList.appendChild(btn);
@@ -421,6 +462,10 @@ function playTurn5() {
 
         setTimeout(() => {
           switchStep(step2, step3);
+          window.track('trap_triggered', {
+            crush_sign: state.crushSign,
+            progress_at_trap: state.progress,
+          });
         }, 2000);
       }, 500);
     });
@@ -429,6 +474,7 @@ function playTurn5() {
 
 // --- STEP 3 & 4: PANIC AND ROAST ---
 document.getElementById('btn-panic').addEventListener('click', () => {
+  window.track('roast_generation_started', { crush_sign: state.crushSign, goal: state.goal });
   const loading = document.getElementById('roast-loading');
   const loadingText = document.getElementById('roast-loading-text');
   loading.classList.remove('hidden');
@@ -448,12 +494,14 @@ document.getElementById('btn-panic').addEventListener('click', () => {
   setTimeout(() => {
     loading.classList.add('hidden');
     switchStep(step3, step4);
+    window.track('roast_revealed', { crush_sign: state.crushSign, goal: state.goal });
     window.scrollTo(0,0);
   }, 7500); // 7.5 seconds wait to build anticipation
 });
 
 // --- STEP 5: PAYWALL ---
 document.getElementById('btn-show-paywall').addEventListener('click', () => {
+  window.track('paywall_viewed', { crush_sign: state.crushSign, goal: state.goal, user_sign: state.userSign });
   // Update the dynamic sign in the paywall hero heading
   const paywallSign = document.getElementById('paywall-sign');
   if (paywallSign && state.crushSign) paywallSign.innerText = state.crushSign;
