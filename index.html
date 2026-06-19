@@ -12,6 +12,19 @@
     <link rel="stylesheet" href="quiz.css">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <script src="analytics.js"></script>
+    <script type="text/javascript">
+      function importHotmart(){
+        var imported = document.createElement('script');
+        imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
+        document.head.appendChild(imported);
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
+        document.head.appendChild(link);
+      }
+      importHotmart();
+    </script>
   </head>
   <body class="quiz-body">
     <main id="app-container">
@@ -258,7 +271,7 @@
         </ul>
 
         <div class="checkout-sticky">
-          <button class="cta-button js-checkout">Unlock the Guide - $17</button>
+          <a href="https://pay.hotmart.com/A106407067U?checkoutMode=2" class="cta-button js-checkout hotmart-fb hotmart__button-checkout" onclick="return false;">Unlock the Guide - $17</a>
           <p class="checkout-note">Apple Pay / Google Pay supported · Instant digital access</p>
         </div>
 
