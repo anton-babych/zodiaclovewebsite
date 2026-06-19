@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="quiz.css">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   </head>
   <body class="quiz-body">
     <main id="app-container">
@@ -29,17 +30,8 @@
         </div>
 
         <form id="onboarding-form" class="onboarding-form">
-          <!-- Q1: Name -->
+          <!-- Q1: User Sign -->
           <div class="form-step active" data-step="1">
-            <div class="form-group">
-              <label for="user-name">First things first, what's your name?</label>
-              <input type="text" id="user-name" placeholder="e.g. Jessica" required>
-            </div>
-            <button type="button" class="cta-button next-btn">Next</button>
-          </div>
-          
-          <!-- Q2: User Sign -->
-          <div class="form-step hidden" data-step="2">
             <div class="form-group">
               <label>What is your zodiac sign?</label>
               <input type="hidden" id="user-sign" required>
@@ -59,9 +51,9 @@
               </div>
             </div>
           </div>
-
-          <!-- Q3: Crush Sign -->
-          <div class="form-step hidden" data-step="3">
+          
+          <!-- Q2: Crush Sign -->
+          <div class="form-step hidden" data-step="2">
             <div class="form-group">
               <label>What is his zodiac sign?</label>
               <input type="hidden" id="crush-sign" required>
@@ -82,8 +74,8 @@
             </div>
           </div>
 
-          <!-- Q4: Vibe -->
-          <div class="form-step hidden" data-step="4">
+          <!-- Q3: Vibe -->
+          <div class="form-step hidden" data-step="3">
             <div class="form-group">
               <label>What is his current vibe right now?</label>
               <input type="hidden" id="vibe" required>
@@ -96,8 +88,8 @@
             </div>
           </div>
 
-          <!-- Q5: Goal -->
-          <div class="form-step hidden" data-step="5">
+          <!-- Q4: Goal -->
+          <div class="form-step hidden" data-step="4">
             <div class="form-group">
               <label>What's your ultimate goal?</label>
               <input type="hidden" id="goal" required>
@@ -108,7 +100,15 @@
                 <button type="button" class="option-btn" data-value="commit">Make him commit</button>
               </div>
             </div>
-            <button type="submit" id="final-submit" class="cta-button" style="display: none;">Start Analysis</button>
+          </div>
+
+          <!-- Q5: Name -->
+          <div class="form-step hidden" data-step="5">
+            <div class="form-group">
+              <label for="user-name">Finally, what's your name?</label>
+              <input type="text" id="user-name" placeholder="e.g. Jessica" required>
+            </div>
+            <button type="submit" class="cta-button">Start Analysis</button>
           </div>
         </form>
 
