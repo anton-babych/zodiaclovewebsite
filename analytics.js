@@ -47,14 +47,13 @@ const POSTHOG_HOST = 'https://eu.i.posthog.com'; // EU cloud — change to https
 
 posthog.init(POSTHOG_KEY, {
   api_host: POSTHOG_HOST,
-  // Session Replay — записывает все движения пользователя
+  // Session Replay — записывает ~2% сессий (каждую ~50-ю)
   session_recording: {
-    maskAllInputs: false,       // имена/текст в инпутах видны (можно true для приватности)
+    sample_rate: 0.02,          // 0.02 = 2% = каждая ~50-я сессия
+    maskAllInputs: false,       // имена/текст в инпутах видны
     maskTextSelector: '.sensitive', // добавь класс .sensitive на что хочешь скрыть
   },
   loaded: function (ph) {
-    // Автоматически идентифицирует анонимных пользователей
-    // ph.identify('user_id_if_known');
     console.log('[Analytics] PostHog loaded, distinct_id:', ph.get_distinct_id());
   }
 });
