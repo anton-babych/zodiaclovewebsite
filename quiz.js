@@ -338,8 +338,8 @@ function removeTypingIndicator() {
 function renderChoices(choices, callback) {
   choicesList.innerHTML = '';
   choices.forEach(choiceObj => {
-    const text = typeof choiceObj === 'string' ? choiceObj : choiceObj.text;
-    const impact = typeof choiceObj === 'string' ? 0 : (choiceObj.impact || 0);
+    const text = typeof choiceObj === 'string' ? choiceObj : (choiceObj.text || choiceObj.t);
+    const impact = typeof choiceObj === 'string' ? 0 : (choiceObj.impact || choiceObj.i || 0);
     
     const btn = document.createElement('div');
     btn.className = 'choice-btn';
