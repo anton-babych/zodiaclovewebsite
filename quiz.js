@@ -12,7 +12,8 @@ const state = {
   timeTalking: '',
   goal: '',
   progress: 0,
-  currentTurn: 0
+  currentTurn: 0,
+  chatOutcome: 'fail'
 };
 
 // --- DATA DICTIONARY ---
@@ -26,7 +27,7 @@ const zodiacData = {
       { r: "we'll see. lowkey tired but we should def do something soon", c: [{t: "I'll let you know if my schedule clears up 💅", i: 20}, {t: "we should! what day?", i: -10}] }
     ],
     trapQuestion: "actually nvm, I'm just gonna crash. next time tho",
-    trapChoices: [ "Wait for him to text first. Play hard to get.", "Send a paragraph asking if everything is okay." ],
+    trapChoices: [ "no worries, rest up. I've got plans anyway.", "are you seriously cancelling again?" ],
     roast: "Aries wants energy and boldness, not passivity or paragraphs of anxiety. They are attracted to people who are alive and direct. If you play games or act needy, they lose the spark instantly.",
     solution: "Send something short, bold, and slightly challenging. Make him feel like the chase is back on, but on your terms."
   },
@@ -38,7 +39,7 @@ const zodiacData = {
       { r: "yeah we'll figure something out later this week", c: [{t: "sounds good, let me know", i: 20}, {t: "ok when exactly?", i: -10}] }
     ],
     trapQuestion: "actually I think I'm gonna take a step back, taking things slow rn",
-    trapChoices: [ "Say 'Why? Are you talking to someone else?'", "Demand to know where this is going immediately." ],
+    trapChoices: [ "slow is fine. I'll keep my plans too.", "why? are you talking to someone else?" ],
     roast: "Taurus values comfort and slow burns. Do not rush emotional or physical intimacy. Pushing them for instant answers makes them feel controlled, and they will completely shut down.",
     solution: "Pull back slightly but remain warm. Let him feel your absence without drama. When a Taurus feels safe but realizes you aren't waiting around, they initiate."
   },
@@ -50,7 +51,7 @@ const zodiacData = {
       { r: "if I don't get distracted on the way there lol. we should hang soon tho", c: [{t: "for sure, let's plan something", i: 20}, {t: "please let's hang out", i: -10}] }
     ],
     trapQuestion: "hey I'm actually gonna go MIA for a bit, need a label-free weekend",
-    trapChoices: [ "Ask 'What are we? I need a label.'", "Double text him asking why he's acting weird." ],
+    trapChoices: [ "enjoy your label-free weekend. I'm doing my thing too.", "what are we then? I need a label." ],
     roast: "Gemini needs mental movement and freedom to breathe. Do not pressure them for instant certainty or turn every conversation into a serious trial. They fear boredom and pressure more than most signs.",
     solution: "Send something completely unrelated and interesting—a meme, a weird fact, a joke. Shift the energy. If you engage his mind without pressure, he comes back."
   },
@@ -62,7 +63,7 @@ const zodiacData = {
       { r: "probably something nostalgic. I'll hit you up later if I'm feeling better", c: [{t: "take all the time you need", i: 20}, {t: "ok I'll be waiting", i: -10}] }
     ],
     trapQuestion: "yeah my ex used to love this movie... anyway I'm gonna go to sleep",
-    trapChoices: [ "Tell him he's being too sensitive.", "Ignore it and change the subject completely." ],
+    trapChoices: [ "I get the feeling. I'll let you rest - talk later.", "you're being way too sensitive about this." ],
     roast: "Cancer wants emotional safety. They remember details and are sensitive to coldness or mockery. Dismissing his feelings or treating his sensitivity like a problem destroys the trust.",
     solution: "Acknowledge the shift gently. 'Hey, I felt the vibe change. We don't have to talk about it, but I'm here.' Vulnerability without pressure is the key."
   },
@@ -74,7 +75,7 @@ const zodiacData = {
       { r: "I'll wear it next time we link. whenever I have time lol", c: [{t: "if you're lucky enough to see me in it", i: 20}, {t: "when is next time?", i: -10}] }
     ],
     trapQuestion: "[Sends a fit pic] kinda ate this look up ngl",
-    trapChoices: [ "Ignore it so his ego doesn't get too big.", "Tease him about looking like he's trying too hard." ],
+    trapChoices: [ "that jacket is unfair. anyway, I have to run.", "you're trying way too hard in that outfit." ],
     roast: "Leo wants to be loved beautifully and admired. They need applause and recognition. Making them feel ordinary or embarrassing them is a guaranteed way to lose them.",
     solution: "Give him a specific, high-quality compliment. Not 'You look nice,' but 'That color on you is actually incredible.' Feed the ego, then step back."
   },
@@ -86,7 +87,7 @@ const zodiacData = {
       { r: "I know my limits lol. we'll figure out a time to see each other soon", c: [{t: "sounds like a plan", i: 20}, {t: "you never have time for me", i: -10}] }
     ],
     trapQuestion: "yeah the way you handled that situation makes no logical sense. I'm just gonna fix it.",
-    trapChoices: [ "Start a massive emotional argument.", "Create chaos to show him he can't control you." ],
+    trapChoices: [ "I value your opinion, but I don't respond to being talked down to.", "stop trying to control everything." ],
     roast: "Virgo falls in love through trust, usefulness, and clarity. Do not create chaos and call it romance. While you shouldn't accept harsh criticism, responding with pure chaos makes a Virgo walk away.",
     solution: "Set a calm, emotionless boundary. 'I value your opinion, but I don't respond to being talked down to.' Virgo respects structure and calm authority."
   },
@@ -98,7 +99,7 @@ const zodiacData = {
       { r: "you're so right. maybe we can go to that aesthetic place soon?", c: [{t: "only if you're buying 💅", i: 20}, {t: "yes please!", i: -10}] }
     ],
     trapQuestion: "actually I can't decide where to go tonight, I'm stressed, you pick or I'm cancelling",
-    trapChoices: [ "Yell at him to just pick something.", "Give him an ultimatum right there on the text." ],
+    trapChoices: [ "Italian at 8. If that doesn't work, we can skip tonight.", "just pick something, this is exhausting." ],
     roast: "Libra wants beauty, balance, and harmony. Pressure makes them indecisive. Raising your voice or forcing instant decisions shatters the elegant aesthetic they need in a relationship.",
     solution: "Remove the pressure but take the lead gracefully. 'Let's just do Italian. I know a place.' They will be intensely relieved and attracted to your gentle decisiveness."
   },
@@ -110,7 +111,7 @@ const zodiacData = {
       { r: "we'll see about that. let's link later. maybe.", c: [{t: "let me know if you survive the day", i: 20}, {t: "why maybe?", i: -10}] }
     ],
     trapQuestion: "yeah my phone is locked for a reason. don't try to look over my shoulder.",
-    trapChoices: [ "Provoke jealousy by flirting with someone else.", "Demand instant vulnerability and passwords." ],
+    trapChoices: [ "your privacy is yours. trust goes both ways though.", "why are you so secretive? what are you hiding?" ],
     roast: "Scorpio wants depth, truth, and deep trust. Do not provoke jealousy or demand instant vulnerability before trust is built. If you play shallow games with a Scorpio, they will cut you off permanently.",
     solution: "Match his privacy with your own mysterious independence. Focus on your own life. When a Scorpio realizes they don't fully possess you, their obsession kicks in."
   },
@@ -122,7 +123,7 @@ const zodiacData = {
       { r: "never! we'll def celebrate when I'm back. whenever that is.", c: [{t: "can't wait 💅", i: 20}, {t: "when are you coming back?", i: -10}] }
     ],
     trapQuestion: "actually I might extend the trip, I don't really want to be tied down rn",
-    trapChoices: [ "Demand domestic predictability and ground rules.", "Try to control every step of his itinerary." ],
+    trapChoices: [ "enjoy it. I'm making my own weekend plans too.", "you always run when things get serious." ],
     roast: "Sagittarius needs freedom, adventure, and a bigger horizon. Do not demand domestic predictability too early or try to control them. If you shrink their world, they will run.",
     solution: "Show him you don't need him to have fun. 'Have the best time! I'm actually going out with the girls this weekend anyway.' Freedom attracts them."
   },
@@ -134,7 +135,7 @@ const zodiacData = {
       { r: "I know, I'll make it up to you. scheduling you in soon.", c: [{t: "I'll send you an invoice for my time", i: 20}, {t: "I'm not an appointment", i: -10}] }
     ],
     trapQuestion: "yeah I have to cancel our date again, work ran late. sorry.",
-    trapChoices: [ "Create a chaotic emotional scene over text.", "Mock his ambition and tell him he's boring." ],
+    trapChoices: [ "No problem. Let me know when your schedule clears up.", "work is clearly more important than me." ],
     roast: "Capricorn values respect, goals, and structure. Do not mock their ambition or create chaotic emotional scenes. They love through responsibility, and disrespecting their time is a dealbreaker.",
     solution: "Respond with cool professionalism. 'No problem, let me know when your schedule clears up.' Then, go silent. They respect people whose time is equally valuable."
   },
@@ -146,7 +147,7 @@ const zodiacData = {
       { r: "yeah I just need some space to think. we'll vibe later.", c: [{t: "take your space! see ya", i: 20}, {t: "why do you always need space?", i: -10}] }
     ],
     trapQuestion: "honestly I just hate labels. I think relationships are a capitalist trap.",
-    trapChoices: [ "Cling to him harder and demand he defines the relationship.", "Forbid him from seeing his friends until he commits." ],
+    trapChoices: [ "Agreed. Let's keep it casual then.", "you need to define this right now." ],
     roast: "Aquarius needs freedom, friendship, and originality. Clinging when they ask for space or demanding standard labels instantly pushes them away. You must respect their personal space.",
     solution: "Agree with him and pull back girlfriend privileges. 'I completely agree, labels are restrictive. Let's just keep things casual.' He will panic when he realizes he's losing exclusivity."
   },
@@ -158,7 +159,7 @@ const zodiacData = {
       { r: "thank you for understanding 🥺 we'll connect soon", c: [{t: "always 🤍", i: 20}, {t: "you better", i: -10}] }
     ],
     trapQuestion: "you're destroying the magic rn, you're being way too harsh with me.",
-    trapChoices: [ "Mock his sensitivity and tell him to be realistic.", "Destroy the magic with unnecessary cynicism." ],
+    trapChoices: [ "I hear you. I can be gentle without ignoring my own feelings.", "you're being dramatic. this isn't a movie." ],
     roast: "Pisces wants magic, tenderness, and emotional depth. They love symbols and private worlds. Mocking their sensitivity or destroying the magic with harsh cynicism ruins the connection.",
     solution: "Lean into the imagination but keep your own boundaries strong. Validate his feelings without becoming his emotional therapist."
   }
@@ -173,11 +174,97 @@ const genericData = {
   ],
   trapQuestion: "actually I'm gonna cancel tonight, maybe next week.",
   trapChoices: [
-    "Send: 'Are you ignoring me?'",
-    "Send: 'Fine, have a nice life.'"
+    "are you ignoring me?",
+    "fine, have a nice life."
   ],
   roast: "Sending anxious, double-texts from a place of insecurity triggers avoidance. You are showing them that they control your emotional state.",
   solution: "Put your phone on DND and go live your life. Silence is the most powerful text you can send when they pull away."
+};
+
+const goalChatData = {
+  apologize: {
+    script: [
+      { r: "hey... I know I went quiet after what happened. I needed space", c: [{t: "I can respect space, but disappearing after hurting me wasn't okay.", i: 22}, {t: "no worries, forget I said anything", i: -12}] },
+      { r: "I didn't mean to make you feel ignored. I just hate conflict", c: [{t: "I hear you. I still need you to own how it landed.", i: 18}, {t: "it's fine, I guess", i: -8}] },
+      { r: "I keep thinking about it. I know I got defensive", c: [{t: "Thank you for saying that. What I need is repair, not distance.", i: 25}, {t: "whatever, you always do this", i: -15}] },
+      { r: "you're right. I should've handled it better", c: [{t: "I appreciate that. I need consistency from here.", i: 20}, {t: "so are you sorry or not?", i: -10}] }
+    ],
+    trapQuestion: "I said I handled it badly. Can we not make this a whole thing?",
+    trapChoices: [
+      { t: "We don't have to drag it out. I just need a real apology before we move past it.", i: 22, outcome: "success" },
+      { t: "you're right, sorry for bringing it up", i: -35, outcome: "fail" }
+    ],
+    roast: "You picked the apology goal, so pure caretaking works against you. If you comfort him out of the uncomfortable moment, his guilt disappears before it turns into accountability.",
+    solution: "Use warm accountability: validate his feelings, name the behavior once, and ask for repair without chasing or attacking.",
+    successInsight: "Your replies matched the apology goal: you stayed calm, but you did not erase the thing he needed to own.",
+    successSolution: "The next text has to convert that guilt into a clean apology without making him defensive. That is a wording problem, not a volume problem."
+  },
+  chase: {
+    script: [
+      { r: "sorry I've been distant. I've just had a lot going on", c: [{t: "all good, I've been busy too", i: 22}, {t: "I've been waiting for you to text me", i: -12}] },
+      { r: "yeah? what have you been up to?", c: [{t: "plans, friends, life. surprisingly fun week", i: 18}, {t: "mostly wondering why you got weird", i: -10}] },
+      { r: "sounds like you're doing fine without me lol", c: [{t: "I am. you're welcome to catch up though", i: 25}, {t: "no I still miss you a lot", i: -15}] },
+      { r: "okay okay, maybe I need to make time then", c: [{t: "maybe. send an actual plan when you have one", i: 20}, {t: "yes please, when can I see you?", i: -10}] }
+    ],
+    trapQuestion: "or we can just keep it casual and see what happens",
+    trapChoices: [
+      { t: "Casual only works if it still feels intentional. Otherwise I'm good.", i: 22, outcome: "success" },
+      { t: "sure, whatever you want", i: -35, outcome: "fail" }
+    ],
+    roast: "You picked the chase goal, but availability kills pursuit. When you sound like you will accept anything, there is nothing for him to move toward.",
+    solution: "Stay light, but make access conditional. He should feel your warmth and your standards at the same time.",
+    successInsight: "Your replies created chase energy because you were warm without waiting around for him to choose the pace.",
+    successSolution: "The next text should keep that tension: open door, clear standard, no begging."
+  },
+  commit: {
+    script: [
+      { r: "I like what we have. I just don't want pressure right now", c: [{t: "I don't need pressure either. I do need clarity.", i: 22}, {t: "okay, I can wait as long as you need", i: -12}] },
+      { r: "clarity how?", c: [{t: "Either we're building something, or we're keeping it casual. Both mean different access to me.", i: 20}, {t: "like... do you love me or not?", i: -15}] },
+      { r: "I haven't thought about it like that", c: [{t: "That's fair. I'm not mad, I just don't do blurry forever.", i: 24}, {t: "you need to decide right now", i: -12}] },
+      { r: "I don't want to lose this. I just move slow", c: [{t: "Slow is fine. Undefined isn't.", i: 22}, {t: "then prove it immediately", i: -10}] }
+    ],
+    trapQuestion: "can we not label it yet but still keep acting the same?",
+    trapChoices: [
+      { t: "No label means no relationship benefits. We can slow down until you know.", i: 22, outcome: "success" },
+      { t: "okay, I just don't want to lose you", i: -35, outcome: "fail" }
+    ],
+    roast: "You picked the commitment goal, so acting like an unlimited situationship is the contradiction. If he gets commitment benefits without choosing you, he has no reason to choose.",
+    solution: "Set a calm structure. Do not demand a label as a panic move; remove relationship-level access until he decides.",
+    successInsight: "Your replies supported the commitment goal because they made the cost of staying undefined clear without sounding desperate.",
+    successSolution: "The next text should make commitment feel like a mature choice, not a trap."
+  }
+};
+
+const obsessTrapReplies = {
+  Aries: "No worries. Rest up - I've got plans anyway.",
+  Taurus: "Slow is fine. I'll keep my plans too.",
+  Gemini: "Enjoy your label-free weekend. I'm doing my thing too.",
+  Cancer: "I get the feeling. I'll let you rest - talk later.",
+  Leo: "That jacket is unfair. Anyway, I have to run.",
+  Virgo: "I value your opinion, but I don't respond to being talked down to.",
+  Libra: "Italian at 8. If that doesn't work, we can skip tonight.",
+  Scorpio: "Your privacy is yours. Trust goes both ways though.",
+  Sagittarius: "Enjoy it. I'm making my own weekend plans too.",
+  Capricorn: "No problem. Let me know when your schedule clears up.",
+  Aquarius: "Agreed. Let's keep it casual then.",
+  Pisces: "I hear you. I can be gentle without ignoring my own feelings.",
+  _default: "No pressure. I'm going to do my thing tonight - talk later."
+};
+
+const obsessBadTrapReplies = {
+  Aries: "are you seriously cancelling again?",
+  Taurus: "why? are you talking to someone else?",
+  Gemini: "what are we then? I need a label.",
+  Cancer: "you're being way too sensitive about this.",
+  Leo: "you're trying way too hard in that outfit.",
+  Virgo: "stop trying to control everything.",
+  Libra: "just pick something, this is exhausting.",
+  Scorpio: "why are you so secretive? what are you hiding?",
+  Sagittarius: "you always run when things get serious.",
+  Capricorn: "work is clearly more important than me.",
+  Aquarius: "you need to define this right now.",
+  Pisces: "you're being dramatic. this isn't a movie.",
+  _default: "fine, have a nice life."
 };
 
 // --- DOM ELEMENTS ---
@@ -329,6 +416,41 @@ function updateProgress(value) {
   progressTextValue.innerText = `${value}%`;
 }
 
+function getActiveChatData() {
+  const signData = zodiacData[state.crushSign] || genericData;
+  const goalData = goalChatData[state.goal];
+  const data = goalData ? { ...signData, ...goalData } : signData;
+  const trapHasOutcome = data.trapChoices.some(choice => typeof choice === 'object' && choice.outcome);
+
+  if (trapHasOutcome) return data;
+
+  const goodTrapReply = obsessTrapReplies[state.crushSign] || obsessTrapReplies._default;
+  const badTrapReply = obsessBadTrapReplies[state.crushSign] || obsessBadTrapReplies._default;
+  return {
+    ...data,
+    trapChoices: [
+      { t: goodTrapReply, i: 22, outcome: "success" },
+      { t: badTrapReply, i: -35, outcome: "fail" }
+    ]
+  };
+}
+
+function getGoalPaywallCopy() {
+  const goal = state.goal || 'obsess';
+  const sign = state.crushSign;
+  const matrix = egoCopy[goal] || egoCopy.obsess;
+  return matrix[sign] || matrix._default;
+}
+
+function applyGoalCtaCopy() {
+  const goal = state.goal || 'obsess';
+  const copy = getGoalPaywallCopy();
+  const roastTease = document.getElementById('roast-tease');
+  const roastCtaText = document.getElementById('roast-cta-text');
+  if (roastTease) roastTease.innerText = roastTeaseCopy[goal] || roastTeaseCopy.obsess;
+  if (roastCtaText) roastCtaText.innerText = copy.cta;
+}
+
 function appendMessage(text, type, status = '') {
   const wrapper = document.createElement('div');
   wrapper.className = `msg-wrapper ${type}`;
@@ -386,9 +508,10 @@ function renderChoices(choices, callback) {
         choice_text: text,
         impact: impact,
         crush_sign: state.crushSign,
+        goal: state.goal,
         is_good_choice: impact > 0,
       });
-      callback(impact);
+      callback(impact, choiceObj, text);
     };
     choicesList.appendChild(btn);
   });
@@ -407,7 +530,7 @@ function startChatSimulation() {
 }
 
 function playDynamicTurn(turnIndex) {
-  const data = zodiacData[state.crushSign] || genericData;
+  const data = getActiveChatData();
   const turnData = data.script[turnIndex];
 
   showTypingIndicator();
@@ -433,7 +556,7 @@ function playDynamicTurn(turnIndex) {
 
 function playTurn5() {
   // The Trap
-  const data = zodiacData[state.crushSign] || genericData;
+  const data = getActiveChatData();
   
   const timeJump = document.createElement('div');
   timeJump.style.textAlign = 'center';
@@ -446,55 +569,132 @@ function playTurn5() {
   appendMessage(data.trapQuestion, 'received');
 
   setTimeout(() => {
-    renderChoices(data.trapChoices, () => {
-      // The Failure (Ignoring the impact here, as it's the fatal trap)
+    renderChoices(data.trapChoices, (impact, choiceObj) => {
       setTimeout(() => {
-        updateProgress(0);
-        progressBar.classList.add('critical');
-        progressTextValue.classList.add('critical');
-        
+        const outcome = typeof choiceObj === 'object' && choiceObj.outcome
+          ? choiceObj.outcome
+          : (impact > 0 ? 'success' : 'fail');
+        const nextProgress = outcome === 'success'
+          ? Math.max(65, Math.min(100, state.progress + impact))
+          : 0;
+
+        state.chatOutcome = outcome;
+        updateProgress(nextProgress);
+
         const lastSent = chatWindow.lastChild;
-        lastSent.querySelector('.msg-bubble').classList.add('failed');
-        const err = document.createElement('div');
-        err.className = 'msg-status error';
-        err.innerText = 'Read 4:15 PM - Ignored';
-        lastSent.appendChild(err);
+
+        if (outcome === 'success') {
+          progressBar.classList.remove('critical');
+          progressTextValue.classList.remove('critical');
+          const read = document.createElement('div');
+          read.className = 'msg-status';
+          read.innerText = 'Read 4:15 PM';
+          lastSent.appendChild(read);
+
+          setTimeout(() => {
+            appendMessage(getSuccessResponse(), 'received');
+          }, 800);
+        } else {
+          progressBar.classList.add('critical');
+          progressTextValue.classList.add('critical');
+          lastSent.querySelector('.msg-bubble').classList.add('failed');
+          const err = document.createElement('div');
+          err.className = 'msg-status error';
+          err.innerText = 'Read 4:15 PM - Ignored';
+          lastSent.appendChild(err);
+        }
 
         setTimeout(() => {
+          prepareInterstitial(outcome);
           switchStep(step2, step3);
           window.track('trap_triggered', {
             crush_sign: state.crushSign,
+            goal: state.goal,
+            outcome,
             progress_at_trap: state.progress,
           });
-        }, 2000);
+        }, outcome === 'success' ? 2400 : 2000);
       }, 500);
     });
   }, 1500);
 }
 
+function getSuccessResponse() {
+  const byGoal = {
+    obsess: "okay... that actually got my attention",
+    apologize: "okay... you're right. I'm sorry.",
+    chase: "fair. let me make an actual plan.",
+    commit: "I hear you. I don't want to keep this blurry."
+  };
+  return byGoal[state.goal] || byGoal.obsess;
+}
+
+function prepareInterstitial(outcome) {
+  const title = document.querySelector('#step-3 h2');
+  const body = document.querySelector('#step-3 p');
+  const button = document.getElementById('btn-panic');
+
+  if (outcome === 'success') {
+    if (title) title.innerText = 'He is opening up.';
+    if (body) body.innerText = 'Your last text moved the goal forward. The next message is where most people lose the leverage.';
+    if (button) button.innerText = 'Show me the exact next text';
+    return;
+  }
+
+  if (title) title.innerText = 'Error. Connection lost.';
+  if (body) body.innerText = 'Your last text triggered his avoidance response.';
+  if (button) button.innerText = 'Wait... what did I do wrong?!';
+}
+
 // --- STEP 3 & 4: PANIC AND ROAST ---
 document.getElementById('btn-panic').addEventListener('click', () => {
-  window.track('roast_generation_started', { crush_sign: state.crushSign, goal: state.goal });
+  window.track('roast_generation_started', { crush_sign: state.crushSign, goal: state.goal, outcome: state.chatOutcome });
   const loading = document.getElementById('roast-loading');
   const loadingText = document.getElementById('roast-loading-text');
   loading.classList.remove('hidden');
   
   // Dynamic text rotation
-  setTimeout(() => loadingText.innerText = `Analyzing ${state.crushSign} psychology...`, 1500);
-  setTimeout(() => loadingText.innerText = "Identifying attachment pattern...", 3000);
-  setTimeout(() => loadingText.innerText = "Cross-referencing behavioral flags...", 4500);
-  setTimeout(() => loadingText.innerText = "Generating Mistake Report...", 6000);
+  if (state.chatOutcome === 'success') {
+    setTimeout(() => loadingText.innerText = `Reading the ${state.crushSign} opening...`, 1500);
+    setTimeout(() => loadingText.innerText = "Identifying the next leverage point...", 3000);
+    setTimeout(() => loadingText.innerText = "Matching it to your goal...", 4500);
+    setTimeout(() => loadingText.innerText = "Building your next-text strategy...", 6000);
+  } else {
+    setTimeout(() => loadingText.innerText = `Analyzing ${state.crushSign} psychology...`, 1500);
+    setTimeout(() => loadingText.innerText = "Identifying attachment pattern...", 3000);
+    setTimeout(() => loadingText.innerText = "Cross-referencing behavioral flags...", 4500);
+    setTimeout(() => loadingText.innerText = "Generating Mistake Report...", 6000);
+  }
 
   // Populate Roast
-  const data = zodiacData[state.crushSign] || genericData;
+  const data = getActiveChatData();
+  const roastHeader = document.querySelector('#step-4 .roast-header h2');
+  const insightTitle = document.querySelector('#roast-insight')?.closest('.insight-card')?.querySelector('h3');
+  const solutionTitle = document.querySelector('#roast-solution')?.closest('.insight-card')?.querySelector('h3');
+
+  if (state.chatOutcome === 'success') {
+    if (roastHeader) roastHeader.innerHTML = `You read that correctly, <span id="roast-name"></span>.`;
+    if (insightTitle) insightTitle.innerText = 'Why it worked:';
+    if (solutionTitle) solutionTitle.innerText = 'Your next move:';
+  } else {
+    if (roastHeader) roastHeader.innerHTML = `Girl... we do not do that, <span id="roast-name"></span>.`;
+    if (insightTitle) insightTitle.innerText = 'The Truth:';
+    if (solutionTitle) solutionTitle.innerText = 'What you SHOULD have done:';
+  }
+
   document.getElementById('roast-name').innerText = state.userName;
-  document.getElementById('roast-insight').innerText = data.roast;
-  document.getElementById('roast-solution').innerText = data.solution;
+  document.getElementById('roast-insight').innerText = state.chatOutcome === 'success'
+    ? (data.successInsight || `Your reply matched the ${goalLabels[state.goal] || 'goal'} instead of reacting from panic.`)
+    : data.roast;
+  document.getElementById('roast-solution').innerText = state.chatOutcome === 'success'
+    ? (data.successSolution || "The next text should keep the same leverage without over-explaining or chasing.")
+    : data.solution;
+  applyGoalCtaCopy();
 
   setTimeout(() => {
     loading.classList.add('hidden');
     switchStep(step3, step4);
-    window.track('roast_revealed', { crush_sign: state.crushSign, goal: state.goal });
+    window.track('roast_revealed', { crush_sign: state.crushSign, goal: state.goal, outcome: state.chatOutcome });
     window.scrollTo(0,0);
   }, 7500); // 7.5 seconds wait to build anticipation
 });
@@ -605,4 +805,3 @@ document.getElementById('btn-show-paywall').addEventListener('click', () => {
   switchStep(step4, step5);
   window.scrollTo(0, 0);
 });
-
