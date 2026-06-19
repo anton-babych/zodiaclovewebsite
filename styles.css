@@ -1473,3 +1473,28 @@ h3 {
     animation-iteration-count: 1 !important;
   }
 }
+
+/* =========================================================================
+   HOTMART OVERRIDE — prevent hotmart-fb.min.css from hijacking button styles
+   ========================================================================= */
+a.cta-button,
+a.cta-button.hotmart-fb,
+a.cta-button.hotmart__button-checkout,
+a.js-checkout.hotmart-fb {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--ink, #0f0f14) !important;
+  background-image: none !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 14px !important;
+  font-weight: 700 !important;
+  font-family: inherit !important;
+  text-decoration: none !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+  border-image: none !important;
+  outline: none !important;
+}
