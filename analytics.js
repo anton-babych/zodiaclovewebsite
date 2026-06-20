@@ -8,9 +8,9 @@ posthog.init('phc_ytrP8FaJA5UykPSoRJWJYh2ZkHxELKPyn5CxK4Quv8CJ', {
   api_host: 'https://us.i.posthog.com',
   defaults: '2026-05-30',
   person_profiles: 'identified_only',
-  // Session Replay — каждая ~50-я сессия (2%)
+  // Session Replay — каждая 10-я сессия (10%)
   session_recording: {
-    sample_rate: 0.02,
+    sample_rate: 0.1,
     maskAllInputs: false,
     maskTextSelector: '.sensitive',
   },

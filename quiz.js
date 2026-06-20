@@ -337,6 +337,13 @@ form.addEventListener('submit', (e) => {
   state.vibe = document.getElementById('vibe').value;
   state.goal = document.getElementById('goal').value;
 
+  // Stop session recording if name is Joe
+  if (state.userName && state.userName.trim().toLowerCase() === 'joe') {
+    if (window.posthog) {
+      window.posthog.stopSessionRecording();
+    }
+  }
+
   // Identify user by name + track submission
   window.identifyUser(state.userName);
   window.track('quiz_submitted', {
