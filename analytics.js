@@ -26,3 +26,39 @@ window.track = function (event, props) {
 window.identifyUser = function (name) {
   posthog.identify(posthog.get_distinct_id(), { name: name });
 };
+
+function getCheckoutContext(button) {
+  const activeStep = document.querySelector('.step-container.active');
+  const props = {
+    page_path: window.location.pathname,
+    page_url: window.location.href,
+    button_text: button.textContent.trim(),
+    button_href: button.getAttribute('href') || '',
+    button_location: button.closest('.mobile-cta') ? 'mobile_sticky' :
+      button.closest('.hero-actions') ? 'hero' :
+      button.closest('.checkout-sticky') ? 'quiz_paywall_sticky' :
+      button.closest('.pricing-card') ? 'pricing' :
+      'unknown',
+  };
+
+  if (activeStep) props.active_step = activeStep.id;
+
+  const goal = document.getElementById('goal')?.value;
+  const userSign = document.getElementById('user-sign')?.value;
+  const crushSign = document.getElementById('crush-sign')?.value;
+  const progress = document.getElementById('progress-text-value')?.textContent;
+
+  if (goal) props.goal = goal;
+  if (userSign) props.user_sign = userSign;
+  if (crushSign) props.crush_sign = crushSign;
+  if (progress) props.progress = progress;
+
+  return props;
+}
+
+document.addEventListener('click', function (event) {
+  const checkoutButton = event.target.closest && event.target.closest('.js-checkout');
+  if (!checkoutButton) return;
+
+  window.track('checkout_clicked', getCheckoutContext(checkoutButton));
+}, true);
