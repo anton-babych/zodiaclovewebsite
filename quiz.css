@@ -937,15 +937,30 @@
 }
 
 .honest-sales-mini {
-  text-align: center;
-  font-size: 12px;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.5;
   color: var(--muted);
-  padding: 16px;
+  padding: 20px;
   background:
     linear-gradient(135deg, rgba(239, 232, 255, 0.3), rgba(255, 255, 255, 0.6));
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1px solid var(--line);
   margin-bottom: 40px;
+}
+
+.honest-sales-mini p.eyebrow {
+  margin-bottom: 12px;
+  display: block;
+}
+
+.honest-sales-mini p:not(.eyebrow) {
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.honest-sales-mini p:last-child {
+  margin-bottom: 0;
 }
 
 /* =========================================================================
