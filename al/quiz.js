@@ -626,7 +626,7 @@ document.getElementById('btn-panic').addEventListener('click', () => {
   const insightTitle = document.querySelector('#roast-insight')?.closest('.insight-card')?.querySelector('h3');
   const solutionTitle = document.querySelector('#roast-solution')?.closest('.insight-card')?.querySelector('h3');
 
-  if (roastHeader) roastHeader.innerHTML = `Moj... këtë nuk e bëjmë, <span id="roast-name"></span>.`;
+  if (roastHeader) roastHeader.innerHTML = `Moj <span id="roast-name"></span>... këtë nuk e bëjmë.`;
   if (insightTitle) insightTitle.innerText = 'E vërteta:';
   if (solutionTitle) solutionTitle.innerText = 'Çfarë funksionon më mirë:';
 
