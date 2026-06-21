@@ -11,6 +11,23 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="quiz.css">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <script>
+      // Geo-redirect: AL (Albania), XK (Kosovo), MK (North Macedonia) → /al
+      (function(){
+        if (sessionStorage.getItem('geo_checked')) return;
+        sessionStorage.setItem('geo_checked', '1');
+        fetch('https://cloudflare.com/cdn-cgi/trace')
+          .then(function(r){ return r.text(); })
+          .then(function(t){
+            var m = t.match(/loc=([A-Z]{2})/);
+            var country = m ? m[1] : '';
+            if (country === 'AL' || country === 'XK' || country === 'MK') {
+              window.location.replace('/al');
+            }
+          })
+          .catch(function(){});
+      })();
+    </script>
     <script src="analytics.js"></script>
     <script type="text/javascript">
       function importHotmart(){

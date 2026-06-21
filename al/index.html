@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="theme-color" content="#fffcf8">
+    <title>Astra | Kuptoje Atë</title>
+    <meta name="description" content="Zbulo natyrën e fshehur të tij. Guida shqiptare e astrologjisë për marrëdhënie — nga një shqiptare, për shqiptaret.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../quiz.css">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <script src="../analytics.js"></script>
+    <script type="text/javascript">
+      function importHotmart(){
+        var imported = document.createElement('script');
+        imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
+        document.head.appendChild(imported);
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
+        document.head.appendChild(link);
+      }
+      importHotmart();
+    </script>
+  </head>
+  <body class="quiz-body">
+    <main id="app-container">
+      
+      <!-- HAPI 1: ONBOARDING ME HAPA -->
+      <section id="step-1" class="step-container active">
+        <div class="onboarding-header">
+          <img src="../assets/maya-author.webp" alt="Astra" class="maya-avatar-large">
+          <h1>Përshëndetje, unë jam Astra.</h1>
+          <p>Kam ardhur ta deshifroj atë për ty. Sepse burrat shqiptarë kanë kodin e tyre — dhe ti meriton ta njohësh.</p>
+        </div>
+        
+        <div class="onboarding-progress-container">
+          <div class="onboarding-progress-bg">
+            <div id="onboarding-progress" class="onboarding-progress-fill"></div>
+          </div>
+        </div>
+
+        <form id="onboarding-form" class="onboarding-form">
+          <!-- P1: Shenja e Përdoruses -->
+          <div class="form-step active" data-step="1">
+            <div class="form-group">
+              <label>Cila është shenja jote e Horoskopit?</label>
+              <input type="hidden" id="user-sign" required>
+              <div class="options-grid" data-target="user-sign">
+                <button type="button" class="option-btn" data-value="Aries">♈ Dashi</button>
+                <button type="button" class="option-btn" data-value="Taurus">♉ Demi</button>
+                <button type="button" class="option-btn" data-value="Gemini">♊ Binjakët</button>
+                <button type="button" class="option-btn" data-value="Cancer">♋ Gaforrja</button>
+                <button type="button" class="option-btn" data-value="Leo">♌ Luani</button>
+                <button type="button" class="option-btn" data-value="Virgo">♍ Virgjëresha</button>
+                <button type="button" class="option-btn" data-value="Libra">♎ Peshorja</button>
+                <button type="button" class="option-btn" data-value="Scorpio">♏ Akrepi</button>
+                <button type="button" class="option-btn" data-value="Sagittarius">♐ Shigjetari</button>
+                <button type="button" class="option-btn" data-value="Capricorn">♑ Bricjapi</button>
+                <button type="button" class="option-btn" data-value="Aquarius">♒ Ujori</button>
+                <button type="button" class="option-btn" data-value="Pisces">♓ Peshqit</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- P2: Shenja e Tij -->
+          <div class="form-step hidden" data-step="2">
+            <div class="form-group">
+              <label>Cila është shenja e tij?</label>
+              <input type="hidden" id="crush-sign" required>
+              <div class="options-grid" data-target="crush-sign">
+                <button type="button" class="option-btn" data-value="Aries">♈ Dashi</button>
+                <button type="button" class="option-btn" data-value="Taurus">♉ Demi</button>
+                <button type="button" class="option-btn" data-value="Gemini">♊ Binjakët</button>
+                <button type="button" class="option-btn" data-value="Cancer">♋ Gaforrja</button>
+                <button type="button" class="option-btn" data-value="Leo">♌ Luani</button>
+                <button type="button" class="option-btn" data-value="Virgo">♍ Virgjëresha</button>
+                <button type="button" class="option-btn" data-value="Libra">♎ Peshorja</button>
+                <button type="button" class="option-btn" data-value="Scorpio">♏ Akrepi</button>
+                <button type="button" class="option-btn" data-value="Sagittarius">♐ Shigjetari</button>
+                <button type="button" class="option-btn" data-value="Capricorn">♑ Bricjapi</button>
+                <button type="button" class="option-btn" data-value="Aquarius">♒ Ujori</button>
+                <button type="button" class="option-btn" data-value="Pisces">♓ Peshqit</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- P3: Gjendja Aktuale -->
+          <div class="form-step hidden" data-step="3">
+            <div class="form-group">
+              <label>Cila e përshkruan gjendjen e tij tani?</label>
+              <input type="hidden" id="vibe" required>
+              <div class="options-list" data-target="vibe">
+                <button type="button" class="option-btn" data-value="ignored">Më ka lënë "lexuar" ose po më injoron.</button>
+                <button type="button" class="option-btn" data-value="hotcold">I nxehtë e i ftohtë (dje i çmendur, sot i largët).</button>
+                <button type="button" class="option-btn" data-value="friends">Po sillet si jemi thjesht "miq".</button>
+                <button type="button" class="option-btn" data-value="stonewalling">Kemi grindje dhe ai po hesht tërësisht.</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- P4: Qëllimi -->
+          <div class="form-step hidden" data-step="4">
+            <div class="form-group">
+              <label>Çfarë dëshiron të arrish?</label>
+              <input type="hidden" id="goal" required>
+              <div class="options-list" data-target="goal">
+                <button type="button" class="option-btn" data-value="obsess">Ta bëj të obsedohet me mua</button>
+                <button type="button" class="option-btn" data-value="apologize">Ta bëj të kërkojë falje</button>
+                <button type="button" class="option-btn" data-value="chase">Ta bëj të më ndjekë sërish</button>
+                <button type="button" class="option-btn" data-value="commit">Ta bëj të angazhohet</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- P5: Emri -->
+          <div class="form-step hidden" data-step="5">
+            <div class="form-group">
+              <label for="user-name">Si të quajnë?</label>
+              <input type="text" id="user-name" placeholder="p.sh. Erjona" required>
+            </div>
+            <button type="submit" class="cta-button">Fillo Analizën</button>
+          </div>
+        </form>
+
+        <div class="loading-overlay hidden" id="loading-overlay">
+          <div class="spinner"></div>
+          <p id="loading-text">Duke analizuar modelet...</p>
+        </div>
+      </section>
+
+      <!-- HAPI 2: SIMULIMI I CHAT-IT -->
+      <section id="step-2" class="step-container hidden">
+        <div class="imessage-header">
+          <div class="imessage-back">‹</div>
+          <div class="imessage-contact">
+            <div class="imessage-avatar">
+              <img id="crush-avatar" src="../assets/crush-avatar.jpg" alt="Ai" onerror="this.style.display='none'">
+            </div>
+            <span id="chat-title">Ai</span>
+            <small>iMessage</small>
+          </div>
+          <div class="imessage-info">ⓘ</div>
+        </div>
+        
+        <div class="progress-container">
+          <div class="progress-bar-bg">
+            <div id="progress-bar" class="progress-bar-fill"></div>
+          </div>
+          <div class="progress-text"><span id="progress-label">Niveli i Obsesionit të Tij</span>: <span id="progress-text-value">0%</span></div>
+        </div>
+
+        <div id="chat-window" class="chat-window">
+          <!-- Flluskat e chat-it do të injektohen këtu nëpërmjet JS -->
+        </div>
+
+        <div id="choices-container" class="choices-container hidden">
+          <p class="choice-prompt">Zgjidh përgjigjen tënde:</p>
+          <div id="choices-list" class="choices-list"></div>
+        </div>
+      </section>
+
+      <!-- HAPI 3: BUTONI I PANIKUT -->
+      <section id="step-3" class="step-container hidden">
+        <div class="panic-wrapper">
+          <div class="panic-icon">🚨</div>
+          <h2>Gabim. Lidhja u pre.</h2>
+          <p>Mesazhi yt i fundit aktivizoi mekanizmin e shmangies së tij.</p>
+          <button id="btn-panic" class="cta-button btn-outline">Prit... çfarë bëra gabim?!</button>
+        </div>
+        <div class="loading-overlay hidden" id="roast-loading">
+          <div class="spinner"></div>
+          <p id="roast-loading-text">Duke analizuar stilin e lidhjes...</p>
+        </div>
+      </section>
+
+      <!-- HAPI 4: ROAST I ASTRAS -->
+      <section id="step-4" class="step-container hidden">
+        <div class="roast-header">
+          <img src="../assets/maya-author.webp" alt="Astra" class="maya-avatar-medium">
+          <h2>Moj... këtë nuk e bëjmë, <span id="roast-name"></span>.</h2>
+        </div>
+        <div class="roast-body">
+          <div class="insight-card">
+            <h3>E Vërteta:</h3>
+            <p id="roast-insight"></p>
+          </div>
+          <div class="insight-card highlight-card">
+            <h3>Çfarë DUHEJ të kishe bërë:</h3>
+            <p id="roast-solution"></p>
+          </div>
+          <div class="solution-card">
+            <p id="roast-tease">Por mund ta rregullojmë. Të duhet teksti që godet instinktin e tij, vendos kufi dhe kthen fuqinë tek ti.</p>
+          </div>
+          <button id="btn-show-paywall" class="cta-button" id="btn-show-paywall"><span id="roast-cta-text">Më trego si</span></button>
+        </div>
+      </section>
+
+      <!-- HAPI 5: PAYWALL -->
+      <section id="step-5" class="step-container hidden">
+
+        <!-- Blloku i fotos hero -->
+        <div class="paywall-hero">
+          <div class="paywall-hero-visual">
+            <img src="../assets/maya-selfie.webp" alt="Astra" class="paywall-hero-img">
+            <div class="paywall-floating-note">
+              <span class="note-kicker">Astra thotë</span>
+              <strong id="paywall-float-note">Tani e di çfarë shkoi gabim.</strong>
+            </div>
+          </div>
+          <div class="paywall-hero-copy">
+            <p class="eyebrow" id="paywall-eyebrow">Zgjidhja ekziston</p>
+            <h2 id="paywall-headline">Merr tekstin e saktë që funksionon me <span id="paywall-sign">Akrepin</span>.</h2>
+            <p id="paywall-subline">103 faqe. Çdo shenjë. Gati për kopjim. Pa drama.</p>
+            <div class="paywall-trust-strip">
+              <span><span class="trust-mark-hot">103</span> faqe</span>
+              <span><span class="trust-mark">♎</span> 12 shenja</span>
+              <span><span class="trust-mark">Aa</span> Skripte</span>
+              <span><span class="trust-mark-hot">!</span> Flamujt kuq</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Historia e Astras -->
+        <div class="maya-story-block">
+          <div class="maya-story-content">
+            <p class="eyebrow">Historia Ime</p>
+            <h2>Edhe unë e kam dërguar atë mesazh me 3 paragrafë në mesnatë.</h2>
+            <p>E di saktësisht si ndihet kur ai papritur ftohet. Edhe unë e justifikonja sjelljen e tyre minimale si "energji e shenjës" ose "ai është i keq me mesazhe".</p>
+            <p><strong>Deri sa e zbulova modelin.</strong></p>
+            <p>Astrologjia nuk është justifikim për sjellje toksike — është plan i egosë së tij. Kur e njeh shenjën e tij, i njeh pikët e dobëta. Kur ke standarde, ti fiton.</p>
+            <p style="font-size:13px; color:#888; margin-top:12px;">— Shkruar nga një grua shqiptare, për gratë shqiptare 🦅</p>
+          </div>
+        </div>
+
+        <!-- Dëshmi Sociale -->
+        <div class="social-proof-block">
+          <p class="eyebrow">Nga grupi i chat-it</p>
+          <h2>Një tekst i qartë. Plan real. Pa spirale.</h2>
+          <figure class="dm-proof-card">
+            <img src="../assets/tiktok-dm-proof.jpg" alt="Dëshmi DM" width="1170" height="1061" loading="lazy">
+          </figure>
+          <p class="proof-caption">«OMG kjo funksionoi brenda 10 minutash.»</p>
+        </div>
+
+        <!-- Pamja e Guidës + Checkout -->
+        <div class="paywall-header">
+          <p class="eyebrow">Hyrje e menjëhershme</p>
+          <h2>Guida e Dashurisë Zodiak</h2>
+        </div>
+
+        <div class="guide-preview-wrapper">
+          <video
+            src="../assets/guide-flip-preview.mp4?v=11"
+            poster="../assets/guide-flip-preview-poster.jpg?v=11"
+            autoplay muted loop playsinline webkit-playsinline
+            class="blur-preview"
+          ></video>
+          <div class="lock-overlay">
+            <span class="lock-icon">🔒</span>
+            <p>Zhblloko për të lexuar</p>
+          </div>
+        </div>
+
+        <ul class="paywall-benefits" id="paywall-benefits">
+          <li><span>Aa</span> 103 Faqe Tekstesh Gati për Kopjim</li>
+          <li><span>!</span> Flamujt Kuq për të 12 Shenjat</li>
+          <li><span>✋</span> Si të vendosësh kufij pa u dukur e çmendur</li>
+        </ul>
+
+        <div class="checkout-sticky">
+          <a href="https://pay.hotmart.com/A106407067U?checkoutMode=2" class="cta-button js-checkout hotmart-fb hotmart__button-checkout" onclick="return false;">Zhblloko Guidën — $6.99</a>
+          <p class="checkout-note">Apple Pay / Google Pay · Hyrje dixhitale e menjëhershme</p>
+        </div>
+
+        <div class="honest-sales-mini">
+          <p class="eyebrow" style="margin-bottom:8px; display:block;">Një fjalë e sinqertë nga Astra</p>
+          <p>Urrej oraret false të numërimit dhe trukun e vjetër <s>$99</s> "tani $6.99!". Kështu nuk veproj me ty.</p>
+          <p>Kalova muaj duke hulumtuar për këtë guidë. Është vetëm $6.99. Çmim i drejtë për kodet sekrete të mendjes së tij.</p>
+        </div>
+      </section>
+
+    </main>
+    <script src="quiz.js"></script>
+  </body>
+</html>
