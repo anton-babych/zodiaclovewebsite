@@ -182,65 +182,69 @@ const genericData = {
 };
 
 const goalChatData = {
-  apologize: {
+  // QËLLIMI 1: T'ia kaloj egon ballkanike
+  ego: {
     script: [
-      { r: "hej... e di që u tërhoqa. duhej hapësirë", c: [{t: "respektoj hapësirën, po zhdukja ishte e shpifur.", i: 22}, {t: "s'ka gje, harro", i: -12}] },
-      { r: "s'doja t't'injoroj. thjesht urrej dramën", c: [{t: "e kuptoj. po duhet me marr përgjegjësi.", i: 18}, {t: "s'ka gje, mendoj", i: -8}] },
-      { r: "e kam mendu shum. u solla keq", c: [{t: "thx. dua riparim, jo distancë.", i: 25}, {t: "gjithmonë kshu", i: -15}] },
-      { r: "ke t'drejtë. u desht ndryshe", c: [{t: "E çmoj. Po dua vazhdimësi.", i: 20}, {t: "i penduar apo jo?", i: -10}] }
+      { r: "oj, ca bëre me atë gjë? e zgjidha vetë, mos u merak", c: [{t: "e di, ke kokë. ca vendose?", i: 22}, {t: "pse s'u konsultove me mua?", i: -12}] },
+      { r: "nuk ka nevojë. i di punët e mia", c: [{t: "e kuptoj. di që je i zgjuar me to.", i: 20}, {t: "po ti gjithmonë mendon se di gjithçka", i: -15}] },
+      { r: "sepse di. gjithsesi, si u zgjidh puna jote?", c: [{t: "shkoi mirë, po mendon vetë tani", i: 25}, {t: "mos ndërro temën", i: -10}] },
+      { r: "mirë. duhet me u pa, kam diçka t'tregoj", c: [{t: "kur t'dush, jam. nuk ngut", i: 20}, {t: "tani! ca ke?!", i: -10}] }
     ],
-    trapQuestion: "thashë e trajtova keq. mund ta lëmë?",
+    trapQuestion: "po ti s'e kupton si funksionojnë gjërat, mos u fut",
     trapChoices: [
-      { t: "ke t'drejtë, sorry që e nisa", i: -35 },
-      { t: "je vërtet i penduar apo po shmangesh?", i: -35 }
+      { t: "po unë po t'ndihmoj, pse je kaq i vrazhdë?", i: -35 },
+      { t: "ok, bëj si të duash. do ta shohësh vetë.", i: -35 }
     ],
-    roast: "Zgjodhe qëllimin e faljes, prandaj kujdesi i pastër funksionon kundër teje. Nëse e rehatosh nga momenti i pakëndshëm, fajësia e tij zhduket para se të kthehet në llogaridhënie.",
-    solution: "Përdor llogaridhënie të ngrohtë: validoja ndjenjat, emërtoje sjelljen një herë dhe kërko riparim pa ndjekje ose sulm."
+    roast: "Burri ballkanik nuk pranon kritikë direkte — e percepton si sulm ndaj krenarisë. Kur e sfidove frontalisht ose u dorëzove plotësisht, humbe të dyja. Egoja e tij u aktivizua ose e humbi respektin.",
+    solution: "Ideja duhet të jetë e TIJ. Mëso të mbjellësh mendimin tënd kaq subtilisht sa ai ta ndjejë si zbulim personal. Kjo nuk është manipulim — kjo është inteligjencë emocionale."
   },
-  chase: {
+  // QËLLIMI 2: Xhelozia → besnikëri
+  jealousy: {
     script: [
-      { r: "sorry kam qenë larg. shumë gjëra n'kokë", c: [{t: "chill, edhe unë isha bo lemsh", i: 22}, {t: "kam prit që ti t'shkruaje", i: -12}] },
-      { r: "po? ca ke bo ti?", c: [{t: "plane, shoqe, jete. vibe t'mirë", i: 18}, {t: "tu pyet pse u bo, i çuditshëm", i: -10}] },
-      { r: "duket si po kalon mirë pa mu lol", c: [{t: "po. mbërrin kur t'mundesh", i: 25}, {t: "jo, m'mungon shum", i: -15}] },
-      { r: "ok ok, duhet me gjet kohë", c: [{t: "ndoshta. dërgo plan kur t'kesh.", i: 20}, {t: "kur t'takhemi?", i: -10}] }
+      { r: "kush ishte ai tipi me ty sonte?", c: [{t: "kolegu i punës. pse?", i: 20}, {t: "çfarë, po më spiunon?", i: -12}] },
+      { r: "thjesht pyeta. nuk m'pëlqen", c: [{t: "e kuptoj. po ai s'ka lidhje, ti ke.", i: 22}, {t: "nuk ke të drejtë të pish kështu", i: -15}] },
+      { r: "ok ok. s'dua grindje. ti je mia", c: [{t: "po, jam. po edhe ti je im — jo tiranit tim.", i: 25}, {t: "po jam jotja, relaksohu", i: -12}] },
+      { r: "e du ca ke, shtrembërojesh kur flas seriozisht", c: [{t: "sepse dashuria s'o kontroll. o besim.", i: 22}, {t: "nuk po flas seriozisht, po bën dramë", i: -10}] }
     ],
-    trapQuestion: "ose mbajmë casual dhe shofim ca bohet",
+    trapQuestion: "mos dil me ato shoqet t'reja, s'i njoh",
     trapChoices: [
-      { t: "sigurt, ca t'dush", i: -35 },
-      { t: "pse duhet me pranu ma pak?", i: -35 }
+      { t: "ok, s'dal nqs s'të pëlqen", i: -35 },
+      { t: "ky kontroll është toxic dhe s'e pranoj", i: -35 }
     ],
-    roast: "Zgjodhe qëllimin e gjahut, por disponueshmëria vret ndjekjen. Kur duket si do të pranosh çdo gjë, nuk ka asgjë për të lëvizur drejt.",
-    solution: "Mbete e lehtë, por bëje hyrjen conditional. Ai duhet të ndjejë ngrohtësinë tënde dhe standardet tua njëkohësisht."
+    roast: "Me burrin xheloz, dy gabimet janë njësoj të rrezikshme: dorëzimi total e bën të kontrollueshëm; sulmi frontal mbi xhelozinë e tij e bën defensive dhe agresiv. Asnjë s'funksionon.",
+    solution: "Xhelozia e tij vjen nga frika e humbjes, jo nga dashuria. Kur i tregon se je e lirë po zgjedh të jesh me të, frika kthehet në adhurim. Nevojitet teksti i duhur."
   },
+  // QËLLIMI 3: Motivim financiar
+  money: {
+    script: [
+      { r: "raca o punë s'ka, çfarë t'bësh", c: [{t: "po, koha e vështirë. po ti ke aftësi, ke mundësi", i: 22}, {t: "pse s'kërkon punë tjetër?", i: -12}] },
+      { r: "thashë po mundohem. s'o aq e thjeshtë", c: [{t: "e di. njëri te miku po bënte mirë me atë fushë, të intereson?", i: 20}, {t: "të tjerët gjejnë, pse jo ti?", i: -15}] },
+      { r: "ndoshta. po kush me ndihmon?", c: [{t: "ti vet di. vetëm je mend shumë keq me veten", i: 25}, {t: "unë t'ndihmoj, eja", i: -10}] },
+      { r: "hm. ndoshta ke t'drejtë. le ta shoh", c: [{t: "shoh kur ia nis. s'nxitoj", i: 22}, {t: "kur fillon? tani!", i: -10}] }
+    ],
+    trapQuestion: "s'ia vlen mundimi, gjithçka o sistemi",
+    trapChoices: [
+      { t: "ke t'drejtë, gjithçka o e korruptuar", i: -35 },
+      { t: "kjo o justifikim, duhet të punosh", i: -35 }
+    ],
+    roast: "Burri ballkanik nuk pranon të ndihmohet nga gruaja — e percepton si poshtërim. Kur i dhe të drejtë tepër, i mbylle rrugën; kur e kritikove, e bllokove egon. Nuk u arrit asgjë.",
+    solution: "Sekreti është ta bësh të ndjejë se ideja erdhi nga ai vetë. Kjo është arti i vërtetë i ndikimit pa u dukur. Guida ka frazat e sakta për çdo shenjë."
+  },
+  // QËLLIMI 4: Angazhim
   commit: {
     script: [
-      { r: "e du ca kemi. s'dua presion", c: [{t: "As unë. Po dua qartësi.", i: 22}, {t: "ok, pres sa t'dush", i: -12}] },
-      { r: "qartësi si?", c: [{t: "Ose bojmë gje serioze, ose casual. Ndryshojnë hyrjet.", i: 20}, {t: "si... m'do apo jo?", i: -15}] },
-      { r: "s'e kisha mendu kshu", c: [{t: "Normale. S'jom bo zemëru, thjesht s'boi 't'paqartë'.", i: 24}, {t: "duhet me vendos tani", i: -12}] },
-      { r: "s'dua me t'humb. ngadalë", c: [{t: "Ngadalë o ok. I papërcaktuar s'o.", i: 22}, {t: "provoje tani", i: -10}] }
+      { r: "e du ca kemi. s'dua presion", c: [{t: "as unë. po dua qartësi.", i: 22}, {t: "ok, pres sa t'dush", i: -12}] },
+      { r: "qartësi si?", c: [{t: "ose bojmë gje serioze, ose casual. ndryshojnë hyrjet.", i: 20}, {t: "si... m'do apo jo?", i: -15}] },
+      { r: "s'e kisha mendu kshu", c: [{t: "normale. s'jom bo zemëru, thjesht s'bëj 'të paqartë'.", i: 24}, {t: "duhet me vendos tani", i: -12}] },
+      { r: "s'dua me t'humb. lëviz ngadalë", c: [{t: "ngadalë o ok. i papërcaktuar s'o.", i: 22}, {t: "provoje tani", i: -10}] }
     ],
     trapQuestion: "mund ta mbajmë pa etiketë po t'vazhdojmë njëjtë?",
     trapChoices: [
       { t: "ok, s'dua me t'humb", i: -35 },
-      { t: "jo, vendos ca jemi", i: -35 }
+      { t: "jo, vendos tani ca jemi", i: -35 }
     ],
-    roast: "Zgjodhe qëllimin e angazhimit, prandaj të sillesh si situationship i pakufizuar është kontradikta. Nëse merr përfitimet e angazhimit pa zgjedhur ty, nuk ka arsye të zgjedhë.",
-    solution: "Vendos strukturë të qetë. Mos kërko etiketë si lëvizje paniku; hiq hyrjen në nivelin e lidhjes deri sa të vendosë."
-  },
-  obsess: {
-    script: [
-      { r: "ke qenë shum n'mendjet e mia lately ngl", c: [{t: "interesting. ca mendove?", i: 22}, {t: "edhe unë po mendoja për ty", i: -12}] },
-      { r: "gjëra të mira besoj haha. si je ti?", c: [{t: "mirë, busy po good", i: 18}, {t: "mirë tani që dëgjova", i: -10}] },
-      { r: "nice. duhet me u pa", c: [{t: "ndoshta. shif schedule-in tënd dhe ma dmt", i: 25}, {t: "po, dua shumë!", i: -15}] },
-      { r: "po planifikoj. t'dërgoj diçka concrete", c: [{t: "ok, shofim", i: 20}, {t: "s'mund ta pres!", i: -10}] }
-    ],
-    trapQuestion: "apo thjesht le t'i lëmë gjërat naturally",
-    trapChoices: [
-      { t: "po, çfarë të duash", i: -35 },
-      { t: "s'jam e gatshme me 'shof ca ndodh'", i: -35 }
-    ],
-    roast: "Kur jep shumë emocion, ai humbet interesin. Obsesioni nuk vjen nga disponueshmëria — vjen nga misteri.",
-    solution: "Tërhiqu me qetësi. Pak distancë e kontrolluar është ajo që e bën mendjen e tij të kthehet tek ti."
+    roast: "Burri ballkanik bën angazhimin kur ndjen se po humb diçka të vlefshme — jo kur i bëhet presion. Kur u dorëzove ose e shtrënge, asnjëra s'funksionoi.",
+    solution: "Vendos strukturë të qetë, pa ultimatum. Hiq relationship-level access deri sa ai të vendosë vetë. Duhet fjalia e saktë."
   }
 };
 
@@ -261,10 +265,10 @@ const chatTitle = document.getElementById('chat-title');
 const progressLabel = document.getElementById('progress-label');
 
 const goalLabels = {
-  obsess:    'Niveli i Obsesionit të Tij',
-  apologize: 'Niveli i Fajësisë së Tij',
-  chase:     'Instinkti i Gjahut të Tij',
-  commit:    'Dëshira e Angazhimit të Tij'
+  ego:      'Niveli i Egos së Tij',
+  jealousy: 'Niveli i Xhelozisë së Tij',
+  money:    'Motivimi i Tij',
+  commit:   'Dëshira e Angazhimit të Tij'
 };
 
 // --- HAPI 1: LOGJIKA E FORMULARIT ME HAPA ---
@@ -396,9 +400,9 @@ function getActiveChatData() {
 }
 
 function getGoalPaywallCopy() {
-  const goal = state.goal || 'obsess';
+  const goal = state.goal || 'ego';
   const sign = state.crushSign;
-  const matrix = egoCopy[goal] || egoCopy.obsess;
+  const matrix = egoCopy[goal] || egoCopy.ego;
   return matrix[sign] || matrix._default;
 }
 
@@ -601,10 +605,58 @@ document.getElementById('btn-panic').addEventListener('click', () => {
   }, 7500);
 });
 
-// --- MATRICA E KOPJES EGO-STRIKE (qëllim × shenjë) ---
+// --- MATRICA E KOPJES (qëllim × shenjë) ---
 const egoCopy = {
-  // ── QËLLIMI: obsess ──────────────────────────────────────────────────
-  obsess: {
+  // ── QËLLIMI: ego — T'ia kaloj egon ballkanike ────────────────────────
+  ego: {
+    Aries:       { eyebrow: "Sekreti i Dashit",          headline: "Si t'i mbjellësh idenë tënde <span id='paywall-sign'>Dashit</span> kaq mirë sa ai ta prezantojë si tën.",               subline: "Ai mendon se vendos vetë. Ti ke vendosur tashmë.",          tease: "Dashi ballkanik do të drejtojë gjithmonë. Por ai që di ta drejtojë atë — pa u dukur — ka fuqinë reale.",                    cta: "Më trego sekretin e Dashit →",   note: "Teksti i saktë është në guidë." },
+    Taurus:      { eyebrow: "Arti i Demit",              headline: "Si ta bindësh <span id='paywall-sign'>Demin</span> të lëvizë pa i thënë kurrë 'duhet'.",                               subline: "Durimi jot është arma. Jo fjalët.",                         tease: "Demi ballkanik s'lëviz me urdhër — lëviz kur ndjen se dëshira është e tij. Kjo guidë të mëson saktësisht si.",               cta: "Më trego artin e Demit →",      note: "Teksti i saktë është në guidë." },
+    Gemini:      { eyebrow: "Kurthi i Binjakëve",        headline: "Si ta bësh <span id='paywall-sign'>Binjakun</span> të mendojë se ideja juaj e përbashkët ishte e tija.",               subline: "Mendon shpejt. Bëhu më e shpejtë.",                         tease: "Binjakët mendon se është gjithmonë ai me idetë. Teksti i duhur e bën të ndjejë pikërisht atë — ndërkohë ti ke arritur çfarë doje.", cta: "Më trego kurthën e Binjakut →", note: "Teksti i saktë është në guidë." },
+    Cancer:      { eyebrow: "Hapi i Gaforres",           headline: "Si ta bësh <span id='paywall-sign'>Gaforrën</span> të marrë iniciativë duke menduar se t'mbron.",                      subline: "Ai s'pranon ndihmë — pranon t'ndihmojë.",                  tease: "Burri Gaforr ballkanik duhet të ndihet mbrojtës. Kur ia pjet tej ekzistencës, ai lëviz vetë.",                               cta: "Më trego hapin e Gaforres →",   note: "Teksti i saktë është në guidë." },
+    Leo:         { eyebrow: "Kurora e Luanit",           headline: "Si ta bësh <span id='paywall-sign'>Luanin</span> të bëjë çfarë dëshiron — duke i lënë kredinë atij.",                 subline: "Ego e tij punon për ty. Falas.",                           tease: "Luani ballkanik do të jetë hero. Kur e vendos ty në rolin e admirueses, ai bën gjithçka për të mbetur i tillë.",             cta: "Më trego kurorën e Luanit →",  note: "Teksti i saktë është në guidë." },
+    Virgo:       { eyebrow: "Logjika e Virgjëreshës",    headline: "Si ta bësh <span id='paywall-sign'>Virgjëreshën</span> të arrijë vetë në përfundimin që dëshiron ti.",                subline: "Analiza e tij. Rezultati jot.",                            tease: "Virgjëresha ballkanik do të jetë 'i zgjuari i dhomës'. Teksti i saktë e bën të analizojë drejt ku dëshiron ti.",            cta: "Më trego logjikën e Virgjëreshës →", note: "Teksti i saktë është në guidë." },
+    Libra:       { eyebrow: "Balanca e Peshorës",        headline: "Si ta bësh <span id='paywall-sign'>Peshorën</span> të vendosë — dhe të vendosë saktësisht çfarë ke në mendje ti.",     subline: "Ai peshon gjithçka. Ti e ke peshuar tashmë.",              tease: "Peshorja ballkanik s'vendos lehtë. Por kur i parashtron 'opsionet' mirë — ka vetëm një rrugëzgjidhje: e jotja.",           cta: "Më trego balancën e Peshorës →", note: "Teksti i saktë është në guidë." },
+    Scorpio:     { eyebrow: "Lëvizja e Akrepit",         headline: "Si t'i hysh brenda mendjes <span id='paywall-sign'>Akrepit</span> pa e bërë të ndihet i penetruar.",                  subline: "Ai kontrollon gjithçka — veç ty.",                         tease: "Akrepi ballkanik mendon se lexon mendjet. Kur ti i jep të dhëna strategjike, ai arrin tek 'vendimi i tij' — që ishte yti.",   cta: "Më trego lëvizjen e Akrepit →", note: "Teksti i saktë është në guidë." },
+    Sagittarius: { eyebrow: "Liria e Shigjetarit",       headline: "Si ta bësh <span id='paywall-sign'>Shigjetarin</span> të bëjë çfarë do ti — duke menduar se po zgjedh lirinë.",        subline: "Ai ikën nga kafazet. Bëhu horizont, jo mur.",              tease: "Shigjetari ballkanik ka frikë nga rutina. Kur ideja jote i duket aventurë — ai vrap drejt saj.",                             cta: "Më trego lirinë e Shigjetarit →", note: "Teksti i saktë është në guidë." },
+    Capricorn:   { eyebrow: "Investimi i Bricjapit",     headline: "Si ta bësh <span id='paywall-sign'>Bricjapin</span> të investojë pikërisht ku dëshiron ti — si vendim biznesi.",        subline: "Ai mendon ROI. Tregoji ROI-n e duhur.",                   tease: "Bricjapi ballkanik vendos me logjikë. Kur ia kuadron idenë si 'investim inteligjent', ai lëviz pa rezistencë.",              cta: "Më trego investimin e Bricjapit →", note: "Teksti i saktë është në guidë." },
+    Aquarius:    { eyebrow: "Filozofia e Ujorit",        headline: "Si ta bësh <span id='paywall-sign'>Ujorin</span> të adoptojë idenë tënde — si 'zbulim personal'.",                     subline: "Ai mendon ndryshe nga të gjithë. Përveç ty.",              tease: "Ujori ballkanik do të jetë ai 'avant-garde'. Kur ideja jote tingëllon si revolucion — ai e mer si tën.",                    cta: "Më trego filozofinë e Ujorit →", note: "Teksti i saktë është në guidë." },
+    Pisces:      { eyebrow: "Ëndrra e Peshqve",          headline: "Si ta bësh <span id='paywall-sign'>Peshqit</span> të ndjejë se ideja jote ishte vizion i përbashkët fati.",             subline: "Ai beson në shenjë. Bëhu shenja.",                         tease: "Peshqit ballkanik jeton me simbole dhe ndjesi. Kur ideja jote ndjehet si destinacion i përbashkët — ai ndjek pa pyetur.",     cta: "Më trego ëndrren e Peshqve →",  note: "Teksti i saktë është në guidë." },
+    _default:    { eyebrow: "Arti i ndikimit",           headline: "Si të marrësh çfarë dëshiron — duke e lënë të mendojë se ishte ideja e tij.",                                         subline: "Fuqia e vërtetë nuk duket kurrë.",                         tease: "Burri ballkanik s'pranon drejtim. Por kur mëson gjuhën e egos së tij — ti drejton gjithçka pa u dukur.",                     cta: "Më trego artin e ndikimit →",   note: "Teksti i saktë është në guidë." },
+  },
+  // ── QËLLIMI: jealousy — Xhelozia → besnikëri ──────────────────────────
+  jealousy: {
+    Aries:       { eyebrow: "Zjarri i Dashit",           headline: "Si ta kthesh xhelozinë e <span id='paywall-sign'>Dashit</span> nga kontroll toksik në mbrojtje të thellë.",               subline: "Ai kontrollon nga frika. Ji arsyeja e sigurisë.",           tease: "Dashi ballkanik është possessive sepse ka frikë të humbasë. Kur kupton se je e lirë por zgjedh atë — xhelozia kthehet dashuri.",  cta: "Më trego zjarrin e Dashit →",  note: "Teksti i saktë është në guidë." },
+    Taurus:      { eyebrow: "Besimi i Demit",            headline: "Si ta bësh <span id='paywall-sign'>Demin</span> të ndjejë siguri aq thellë sa xhelozia zhduket vetë.",                 subline: "Ai s'kontrollon nga keqdashja. Kontrollon nga frika.",       tease: "Demi ballkanik kontrollon çfarë vlerëson. Teksti i duhur e bën të ndjejë se nuk rrezikon të humbasë — dhe krahëroret lirohen.",  cta: "Më trego besimin e Demit →",   note: "Teksti i saktë është në guidë." },
+    Gemini:      { eyebrow: "Besnikëria e Binjakut",     headline: "Si ta bësh <span id='paywall-sign'>Binjakun</span> të zgjedhë ty — me vullnet të plotë, jo me kontroll.",               subline: "Ai s'mbahet. Fitohet.",                                   tease: "Binjakët ballkanik bëhet possessive kur ndihet i pasigurt. Tregoji pavarësinë — dhe papritur ai dëshiron të mbajë atë që po ikën.", cta: "Më trego besnikërinë e Binjakut →", note: "Teksti i saktë është në guidë." },
+    Cancer:      { eyebrow: "Preoku i Gaforres",         headline: "Si t'ia kthesh <span id='paywall-sign'>Gaforres</span> xhelozinë në kujdes të vërtetë familjar.",                        subline: "Ai dëshiron t'mbrojë, jo t'zotërojë.",                    tease: "Gaforrja ballkanik konfuzon mbrojtjen me zotërimin. Teksti i saktë e çon nga 'ku ishe?' tek 'kujdes për veten'.",             cta: "Më trego preokun e Gaforres →", note: "Teksti i saktë është në guidë." },
+    Leo:         { eyebrow: "Krenaria e Luanit",         headline: "Si ta bësh <span id='paywall-sign'>Luanin</span> të ndihet kaq i sigurt me ty sa xhelozia humbet arsye.",               subline: "Ai kontrollon se ka frikë. Çliroje atë frikë.",            tease: "Luani ballkanik bëhet tyran kur egoja e tij ndihet e rrezikuar. Një frazë e saktë e bën të ndihet mbret — dhe mbretërit s'xhelozohen.", cta: "Më trego krenarësinë e Luanit →", note: "Teksti i saktë është në guidë." },
+    Virgo:       { eyebrow: "Qartësia e Virgjëreshës",   headline: "Si t'i japësh <span id='paywall-sign'>Virgjëreshës</span> logjikën e besimit — jo urrejtjen e kontrollit.",              subline: "Ai analizon rrezikun. Eliminoji rrezikun.",                tease: "Virgjëresha ballkanik xhelozohet sepse 'nuk ka prova besimi'. Teksti i saktë i jep evidencën e besimit pa u ulur poshtë.",      cta: "Më trego qartësinë e Virgjëreshës →", note: "Teksti i saktë është në guidë." },
+    Libra:       { eyebrow: "Harmonia e Peshorës",       headline: "Si ta kthesh tensionin e <span id='paywall-sign'>Peshorës</span> nga dramë në dialog të qetë dashurie.",                subline: "Ai nuk dëshiron konflikt. Por ia krijon.",                  tease: "Peshorja ballkanik xhelozohet por urren grindjet. Teksti i saktë e bën të ndjejë harmoni aq thellë sa kontrolli nuk ka ku të qëndrojë.", cta: "Më trego harmoninë e Peshorës →", note: "Teksti i saktë është në guidë." },
+    Scorpio:     { eyebrow: "Besimi i Akrepit",          headline: "Si ta kthesh obsesionin e <span id='paywall-sign'>Akrepit</span> nga kontroll shkatërrimtar në besnikëri absolute.",       subline: "Ai kontrollon çfarë s'do ta humbasë. Bëhu e humbshme.",    tease: "Akrepi ballkanik obsesionohet sepse ka frikë nga braktisja. Kur ia tregon se je e lirë po qëndron — obsesioni kthehet preokupim.", cta: "Më trego besimin e Akrepit →",  note: "Teksti i saktë është në guidë." },
+    Sagittarius: { eyebrow: "Liria e Shigjetarit",       headline: "Si ta bësh <span id='paywall-sign'>Shigjetarin</span> të besojë aq shumë sa xhelozia nuk ka vend.",                     subline: "Ai xhelozohet kur ndihet i lidhur. Çliroje.",              tease: "Shigjetari ballkanik bëhet possessive kur ndihet i zënë rob. Tregoji se nuk je kafaz — dhe papritur dëshiron të qëndrojë.",     cta: "Më trego lirinë e Shigjetarit →", note: "Teksti i saktë është në guidë." },
+    Capricorn:   { eyebrow: "Respekti i Bricjapit",      headline: "Si ta bësh <span id='paywall-sign'>Bricjapin</span> të të respektojë aq shumë sa kontrolli nuk ka nevojë.",               subline: "Ai kontrollon çfarë s'respekton ende plotësisht.",          tease: "Bricjapi ballkanik kontrollon kur s'ka besim të plotë. Teksti i saktë ndërton respektin — dhe respekti e zëvendëson xhelozinë.",  cta: "Më trego respektin e Bricjapit →", note: "Teksti i saktë është në guidë." },
+    Aquarius:    { eyebrow: "Besimi i Ujorit",           headline: "Si ta bësh <span id='paywall-sign'>Ujorin</span> të zgjedhë besimin mbi kontrollin — si princip personal.",               subline: "Ai urren posesivitetin. Edhe kur e bën.",                  tease: "Ujori ballkanik e di që xhelozia është 'primitive'. Kur i tregon idenë e lirisë me besim — ai e adopton si filozofi vetë.",     cta: "Më trego besimin e Ujorit →",  note: "Teksti i saktë është në guidë." },
+    Pisces:      { eyebrow: "Magjia e Peshqve",          headline: "Si ta kthesh frikën e <span id='paywall-sign'>Peshqve</span> nga humbja juaj në preokupim të thellë dashurie.",             subline: "Ai xhelozohet sepse ty të dashton tepër.",                  tease: "Peshqit ballkanik xhelozohet kur ndihet emocionalisht i pasigurt. Teksti i saktë i jep sigurinë — pa humbur lirinë tënde.",     cta: "Më trego magjinë e Peshqve →",  note: "Teksti i saktë është në guidë." },
+    _default:    { eyebrow: "Kthesa e xhelozisë",        headline: "Si ta kthesh kontrollin e tij shkatërrimtar në besnikërinë e thellë që vërtet dëshiron.",                                subline: "Xhelozia e tij vjen nga frika. Ji arsyeja e sigurisë.",    tease: "Çdo burrë ballkanik xhelozohet ndryshe — sipas shenjës. Guida ka frazën e saktë që e kthen frikën e tij në dashurinë që meriton.", cta: "Më trego kthesën e xhelozisë →", note: "Teksti i saktë është në guidë." },
+  },
+  // ── QËLLIMI: money — Motivim financiar ────────────────────────────────
+  money: {
+    Aries:       { eyebrow: "Fitorja e Dashit",           headline: "Si ta bësh <span id='paywall-sign'>Dashin</span> të dojë të fitojë më shumë — pa e thënë kurrë 'duhet'.",               subline: "Dashi lufton. Tregoji se cila betejë ia vlen.",             tease: "Dashi ballkanik është competitiv deri n'palcë. Kur fraza jote e aktivizon instinktin e fitores — ai vepron vetë.",              cta: "Më trego fitoren e Dashit →",   note: "Teksti i saktë është në guidë." },
+    Taurus:      { eyebrow: "Rehatia e Demit",            headline: "Si ta bësh <span id='paywall-sign'>Demin</span> të investojë në të ardhmen — duke i treguar rehatinë që e pret.",        subline: "Ai dëshiron stabilitetin. Tregoji çmimin e tij.",          tease: "Demi ballkanik lëviz kur sheh 'shtëpinë e ëndrrave'. Fjalia e saktë ia vizualizon atë — dhe ai fillon të lëvizë.",            cta: "Më trego rehatinë e Demit →",  note: "Teksti i saktë është në guidë." },
+    Gemini:      { eyebrow: "Inovacioni i Binjakut",      headline: "Si ta bësh <span id='paywall-sign'>Binjakun</span> t'i eksplorojë mundësitë — duke e paraqitur si aventurë.",            subline: "Ai s'punon. Eksploron. Tregoji eksploratën.",              tease: "Binjakët ballkanik mërzitet nga rutina. Kur mundësia duket si diçka e re dhe interesante — ai hidhet menjëherë.",              cta: "Më trego inovacionin e Binjakut →", note: "Teksti i saktë është në guidë." },
+    Cancer:      { eyebrow: "Familja e Gaforres",         headline: "Si ta motivosh <span id='paywall-sign'>Gaforrën</span> të rritet — duke ia lidhur ambicien me mbrojtjen e familjes.",   subline: "Ai punon për familjen. Ji ajo familje.",                   tease: "Gaforrja ballkanik s'lëviz për veten — lëviz për ata që i do. Fjalia e saktë e lidh ambicien me dashurinë — dhe ai niset.",     cta: "Më trego familjen e Gaforres →", note: "Teksti i saktë është në guidë." },
+    Leo:         { eyebrow: "Statusi i Luanit",           headline: "Si ta bësh <span id='paywall-sign'>Luanin</span> të dëshirojë suksesin — si provë të vlerës së tij.",                 subline: "Ai dëshiron të admirohej. Suksesi e bën të admirohej.",    tease: "Luani ballkanik kujdeset shumë për imazhin. Kur suksesi lidhet me reputacionin — ai ndez motorin vetë.",                      cta: "Më trego statusin e Luanit →",  note: "Teksti i saktë është në guidë." },
+    Virgo:       { eyebrow: "Plani i Virgjëreshës",       headline: "Si ta ndihmosh <span id='paywall-sign'>Virgjëreshën</span> të veprojë — jo vetëm të planifikojë.",                     subline: "Ai ka planin perfekt. I mungon shtysa.",                   tease: "Virgjëresha ballkanik analizon pa fund. Teksti i saktë e kalon nga analiza në aksion — pa e bërë të ndihet i shtyrë.",        cta: "Më trego planin e Virgjëreshës →", note: "Teksti i saktë është në guidë." },
+    Libra:       { eyebrow: "Ekuilibri i Peshorës",       headline: "Si ta bësh <span id='paywall-sign'>Peshorën</span> të vendosë për mundësinë — pa u bllokuar nga dyshimet.",             subline: "Ai peshon gjithmonë. Jepi njërën anë peshën.",             tease: "Peshorja ballkanik është i paralajmëruar nga vendimi i gabuar. Teksti i saktë ia zbeh frikën dhe ia kthen qartësinë.",          cta: "Më trego ekuilibrin e Peshorës →", note: "Teksti i saktë është në guidë." },
+    Scorpio:     { eyebrow: "Fuqia e Akrepit",            headline: "Si ta bësh <span id='paywall-sign'>Akrepin</span> të dëshirojë fuqinë financiare — si kontroll të vërtetë.",             subline: "Ai dëshiron fuqi. Paratë janë fuqi.",                      tease: "Akrepi ballkanik ka obsesion me kontrollin. Kur suksesi financiar paraqitet si 'fuqi e vërtetë' — ai aktivizohet menjëherë.",   cta: "Më trego fuqinë e Akrepit →",   note: "Teksti i saktë është në guidë." },
+    Sagittarius: { eyebrow: "Aventura e Shigjetarit",    headline: "Si ta bësh <span id='paywall-sign'>Shigjetarin</span> të shohë suksesin si biletë lirie — jo si kafaz.",                subline: "Ai ikën nga rutina. Paratë blejnë liri.",                 tease: "Shigjetari ballkanik i frikësohet ngecjes. Kur suksesi lidhet me liri dhe aventurë — ai lëviz pa rezistencë.",                cta: "Më trego aventurën e Shigjetarit →", note: "Teksti i saktë është në guidë." },
+    Capricorn:   { eyebrow: "Ambicia e Bricjapit",        headline: "Si ta aktivizosh ambicien e <span id='paywall-sign'>Bricjapit</span> — pa e bërë të ndihet i shtyrë.",                subline: "Ai ka ambicie. I mungon drejtuesi.",                       tease: "Bricjapi ballkanik ka plan afatgjatë por shpesh ngec. Teksti i saktë e rinis motorin — si vendim i tij, jo shtysë e jashtme.",  cta: "Më trego ambicien e Bricjapit →", note: "Teksti i saktë është në guidë." },
+    Aquarius:    { eyebrow: "Ndryshimi i Ujorit",         headline: "Si ta bësh <span id='paywall-sign'>Ujorin</span> të shohë suksesin si mjet ndryshimi — jo si sistem.",                 subline: "Ai kundërshton sistemin. Jepi alternativën.",              tease: "Ujori ballkanik refuzon 'rat race'. Por kur mundësia paraqitet si 'rrugë alternative' dhe inovuese — ai hidhet menjëherë.",    cta: "Më trego ndryshimin e Ujorit →", note: "Teksti i saktë është në guidë." },
+    Pisces:      { eyebrow: "Ëndrra e Peshqve",           headline: "Si ta bësh <span id='paywall-sign'>Peshqit</span> ta transformojë ëndrrën në aksion — pa humbur magjinë.",              subline: "Ai ëndërron shumë. Ëndrrat duan shkas.",                  tease: "Peshqit ballkanik jeton në ëndërr. Teksti i saktë e lidhë ëndrrën me realitetin — dhe e sheh mundësinë si shenjë fati.",      cta: "Më trego ëndrrën e Peshqve →",  note: "Teksti i saktë është në guidë." },
+    _default:    { eyebrow: "Motivimi i tij",             headline: "Si ta bësh të dëshirojë të rritet — duke menduar se ishte ideja e tij.",                                              subline: "Burri ballkanik s'pranon motivim. Pranon zbulim.",          tease: "Çdo shenjë ka shtysën e vet. Guida ka frazën e saktë që e kthen justifikimin e tij në ambicie.",                              cta: "Më trego motivimin e tij →",    note: "Teksti i saktë është në guidë." },
+  },
+  // ── QËLLIMI: commit ──────────────────────────────────────────────────
+  commit: {
     Aries:       { eyebrow: "Kthesa e fuqisë",          headline: "Si ta thyesh egon e <span id='paywall-sign'>Dashit</span> aq thellë sa nuk mund të ndalojë të mendojë për ty.",         subline: "Një mesazh. Krenaria e tij thyhet. Obsesioni fillon.",        tease: "Dashi funksionon me gjah dhe fitore. Çasti kur ndalon ndjekjen, truri i tij degeneron. Të duhet fraza e saktë që aktivizon panikun e tij të gjahtar.",    cta: "Më trego çelësin e Dashit →",    note: "Teksti i saktë është në guidë." },
     Taurus:      { eyebrow: "Kthesa e kontrollit",       headline: "Mesazhi i vetëm që e bën <span id='paywall-sign'>Demin</span> të kuptojë se po humbet kontrollin mbi ty.",              subline: "I qetë. I ftohtë. Shkatërrues për zonën e tij të rehatisë.",   tease: "Demi është i programuar të posedojë. Hiq sigurinë, dhe qetësia e tij çahet. Teksti është kirurgjik — pa lutje, pa dramë.",                  cta: "Më trego çelësin e Demit →",     note: "Teksti i saktë është në guidë." },
     Gemini:      { eyebrow: "Prerja e vëmendjes",         headline: "Si të bëhesh gjëja e vetme që <span id='paywall-sign'>Binjakët</span> mendon — duke u bërë e heshtur.",                subline: "Pa ndjekje. Pa panik. Thjesht zhdukje nga truri i tij.",       tease: "Ego e Binjakëve ushqehet me stimulim të vazhdueshëm. Hiq prizën dhe shiko mendjen e tij të kthehet spirale tek ti.",          cta: "Më trego trukun e Binjakëve →",  note: "Teksti i saktë është në guidë." },
@@ -671,20 +723,20 @@ const egoCopy = {
 
 // ── Kopja e roast tease për çdo qëllim ──────────────────────────────────
 const roastTeaseCopy = {
-  obsess:    "Por ja ku është gjëja — egoja e tij ka një çarje specifike. Thjesht ende nuk e ke gjetur. Teksti i duhur nuk lutet. Ai thyen diçka brenda tij.",
-  apologize: "Por faji nuk vjen nga bërtima. Vjen nga fjalia e vetme që e bën ndërgjegjën e tij të bëjë punën. Të duhet ajo fjali.",
-  chase:     "Por ndjekja nuk fillon me presion. Fillon çastin kur kupton se ndalove së prituri. Të duhet teksti i saktë që sinjalizon atë.",
-  commit:    "Por angazhimi nuk detyrohet — aktivizohet. Të duhet lëvizja e vetme që e bën koston e MOS zgjedhjes tënde papritur shumë reale.",
+  ego:      "Por egoja ballkanike ka çarjen e saj specifike — dhe ajo çarje ndryshon me çdo shenjë. Teksti i duhur e bën të mendojë se ka arritur vetë atë çfarë dëshiroje ti.",
+  jealousy: "Por xhelozia e tij nuk është problem karakteri — është frikë e fshehur. Fjalia e saktë e kthen atë frikë në besnikërinë e thellë që meriton.",
+  money:    "Por burri ballkanik s'pranon motivim nga të tjerët. Pranon zbulim personal. Teksti i saktë ia paraqet idenë tënde si mendim të tij — dhe ai niset vetë.",
+  commit:   "Por angazhimi ballkanik nuk detyrohet — aktivizohet. Të duhet lëvizja e vetme që e bën të ndjejë se po humbet diçka shumë të vlefshme.",
 };
 
 // ── HAPI 5: PAYWALL — lidhja me kopjen dinamike ────────────────────────
 document.getElementById('btn-show-paywall').addEventListener('click', () => {
   window.track('paywall_viewed', { crush_sign: state.crushSign, goal: state.goal, user_sign: state.userSign });
 
-  const goal = state.goal || 'obsess';
+  const goal = state.goal || 'ego';
   const sign = state.crushSign;
 
-  const matrix = egoCopy[goal] || egoCopy.obsess;
+  const matrix = egoCopy[goal] || egoCopy.ego;
   const copy   = matrix[sign]  || matrix._default;
 
   const roastTease = document.getElementById('roast-tease');
