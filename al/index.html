@@ -12,6 +12,31 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../quiz.css">
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <style>
+      .reviews-carousel {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 16px;
+        padding-bottom: 12px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .reviews-carousel::-webkit-scrollbar {
+        display: none;
+      }
+      .reviews-carousel .dm-proof-card {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+        margin: 0;
+      }
+      .reviews-carousel .dm-proof-card img {
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        width: 100%;
+        height: auto;
+      }
+    </style>
     <script src="../analytics.js"></script>
     <script type="text/javascript">
       function importHotmart(){
@@ -241,10 +266,18 @@
         <div class="social-proof-block">
           <p class="eyebrow">Nga grupi i chat-it</p>
           <h2>Një tekst i qartë. Plan real. Pa spirale.</h2>
-          <figure class="dm-proof-card">
-            <img src="../assets/tiktok-dm-proof.jpg" alt="Dëshmi DM" width="1170" height="1061" loading="lazy">
-          </figure>
-          <p class="proof-caption">«OMG kjo funksionoi brenda 10 minutash.»</p>
+          <div class="reviews-carousel">
+            <figure class="dm-proof-card">
+              <img src="../assets/al-review-1.jpg" alt="Dëshmi DM nga Keisi" loading="lazy">
+            </figure>
+            <figure class="dm-proof-card">
+              <img src="../assets/al-review-2.jpg" alt="Dëshmi DM nga Anisa" loading="lazy">
+            </figure>
+            <figure class="dm-proof-card">
+              <img src="../assets/al-review-3.jpg" alt="Dëshmi DM nga Vesa" loading="lazy">
+            </figure>
+          </div>
+          <p class="proof-caption">Rrëshqit për të parë më shumë dëshmi ➡️</p>
         </div>
 
         <!-- Pamja e Guidës + Checkout -->
