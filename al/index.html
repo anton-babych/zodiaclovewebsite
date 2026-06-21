@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta name="theme-color" content="#fffcf8">
     <title>Maya | Kuptoje Atë</title>
-    <meta name="description" content="Zbulo natyrën e fshehur të tij. Guida shqiptare e astrologjisë për marrëdhënie — nga një shqiptare, për shqiptaret.">
+    <meta name="description" content="Kuptoje kodin e tij pa humbur veten. Guida shqiptare e astrologjisë për marrëdhënie — për vajzat shqiptare që duan dashuri, jo ankth.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
@@ -59,8 +59,8 @@
       <section id="step-1" class="step-container active">
         <div class="onboarding-header">
           <img src="../assets/maya-author.webp" alt="Maya" class="maya-avatar-large">
-          <h1>Përshëndetje, unë jam Maya.</h1>
-          <p>Kam ardhur ta deshifroj atë për ty. Sepse burrat shqiptarë kanë kodin e tyre — dhe ti meriton ta njohësh.</p>
+          <h1>Hej, jam Maya.</h1>
+          <p>Nuk je e çmendur. Thjesht po flet me një burrë që reagon nga krenaria, frika dhe egoja. Unë jam këtu ta deshifroj për ty — pa humbur veten gjatë rrugës.</p>
         </div>
         
         <div class="onboarding-progress-container">
@@ -73,7 +73,7 @@
           <!-- P1: Shenja e Përdoruses -->
           <div class="form-step active" data-step="1">
             <div class="form-group">
-              <label>Cila është shenja jote e Horoskopit?</label>
+              <label>Cila është shenja jote e horoskopit?</label>
               <input type="hidden" id="user-sign" required>
               <div class="options-grid" data-target="user-sign">
                 <button type="button" class="option-btn" data-value="Aries">♈ Dashi</button>
@@ -120,10 +120,10 @@
               <label>Cila e përshkruan gjendjen e tij tani?</label>
               <input type="hidden" id="vibe" required>
               <div class="options-list" data-target="vibe">
-                <button type="button" class="option-btn" data-value="ignored">Më ka lënë "lexuar" ose po më injoron.</button>
-                <button type="button" class="option-btn" data-value="hotcold">I nxehtë e i ftohtë (dje i çmendur, sot i largët).</button>
-                <button type="button" class="option-btn" data-value="friends">Po sillet si jemi thjesht "miq".</button>
-                <button type="button" class="option-btn" data-value="stonewalling">Kemi grindje dhe ai po hesht tërësisht.</button>
+                <button type="button" class="option-btn" data-value="ignored">Më ka lënë "seen" dhe po bën sikur s'ka ndodhur asgjë.</button>
+                <button type="button" class="option-btn" data-value="hotcold">Një ditë më kërkon gjithë kohën, ditën tjetër bëhet akull.</button>
+                <button type="button" class="option-btn" data-value="friends">Po më mban si "shoqe", por sillet si të isha e tija.</button>
+                <button type="button" class="option-btn" data-value="stonewalling">U zumë dhe tani po më dënon me heshtje.</button>
               </div>
             </div>
           </div>
@@ -134,10 +134,10 @@
               <label>Çfarë dëshiron të arrish?</label>
               <input type="hidden" id="goal" required>
               <div class="options-list" data-target="goal">
-                <button type="button" class="option-btn" data-value="ego">T'ia kaloj egon e tij — të bëj ta bëjë vetë çfarë dua unë</button>
-                <button type="button" class="option-btn" data-value="jealousy">Ta kthej xhelozinë e tij në besnikëri të vërtetë</button>
-                <button type="button" class="option-btn" data-value="money">Ta motivoj të rritet — pa e bërë të ndihet i shtyrë</button>
-                <button type="button" class="option-btn" data-value="commit">Ta bëj të angazhohet — me vullnetin e tij</button>
+                <button type="button" class="option-btn" data-value="ego">Ta bëj ta kuptojë vetë — pa i rënë në gjunjë</button>
+                <button type="button" class="option-btn" data-value="jealousy">Ta kthej xhelozinë në siguri, jo kontroll</button>
+                <button type="button" class="option-btn" data-value="money">Ta motivoj të ngrihet — pa ia vrarë krenarinë</button>
+                <button type="button" class="option-btn" data-value="commit">Ta çoj drejt seriozitetit — pa iu lutur</button>
               </div>
             </div>
           </div>
@@ -176,7 +176,7 @@
           <div class="progress-bar-bg">
             <div id="progress-bar" class="progress-bar-fill"></div>
           </div>
-          <div class="progress-text"><span id="progress-label">Niveli i Obsesionit të Tij</span>: <span id="progress-text-value">0%</span></div>
+          <div class="progress-text"><span id="progress-label">Sa shumë po afrohet</span>: <span id="progress-text-value">0%</span></div>
         </div>
 
         <div id="chat-window" class="chat-window">
@@ -211,17 +211,17 @@
         </div>
         <div class="roast-body">
           <div class="insight-card">
-            <h3>E Vërteta:</h3>
+            <h3>E vërteta:</h3>
             <p id="roast-insight"></p>
           </div>
           <div class="insight-card highlight-card">
-            <h3>Çfarë DUHEJ të kishe bërë:</h3>
+            <h3>Çfarë funksionon më mirë:</h3>
             <p id="roast-solution"></p>
           </div>
           <div class="solution-card">
-            <p id="roast-tease">Por mund ta rregullojmë. Të duhet teksti që godet instinktin e tij, vendos kufi dhe kthen fuqinë tek ti.</p>
+            <p id="roast-tease">Por mund ta rregullojmë. Të duhet fjalia që ia prek krenarinë pa të bërë ty të dukesh e dëshpëruar.</p>
           </div>
-          <button id="btn-show-paywall" class="cta-button" id="btn-show-paywall"><span id="roast-cta-text">Më trego si</span></button>
+          <button id="btn-show-paywall" class="cta-button"><span id="roast-cta-text">Më trego si</span></button>
         </div>
       </section>
 
@@ -239,13 +239,13 @@
           </div>
           <div class="paywall-hero-copy">
             <p class="eyebrow" id="paywall-eyebrow">Zgjidhja ekziston</p>
-            <h2 id="paywall-headline">Merr tekstin e saktë që funksionon me <span id="paywall-sign">Akrepin</span>.</h2>
-            <p id="paywall-subline">103 faqe. Çdo shenjë. Gati për kopjim. Pa drama.</p>
+            <h2 id="paywall-headline">Merr fjalinë që duhet t'i thuash <span id="paywall-sign">Akrepit</span>.</h2>
+            <p id="paywall-subline">103 faqe. Çdo shenjë. Tekste gati. Pa lutje, pa dramë.</p>
             <div class="paywall-trust-strip">
               <span><span class="trust-mark-hot">103</span> faqe</span>
               <span><span class="trust-mark">♎</span> 12 shenja</span>
-              <span><span class="trust-mark">Aa</span> Skripte</span>
-              <span><span class="trust-mark-hot">!</span> Flamujt kuq</span>
+              <span><span class="trust-mark">Aa</span> Tekste gati</span>
+              <span><span class="trust-mark-hot">!</span> Red flags</span>
             </div>
           </div>
         </div>
@@ -254,18 +254,18 @@
         <div class="maya-story-block">
           <div class="maya-story-content">
             <p class="eyebrow">Historia Ime</p>
-            <h2>Edhe unë e kam dërguar atë mesazh me 3 paragrafë në mesnatë.</h2>
-            <p>E di saktësisht si ndihet kur ai papritur ftohet. Edhe unë e justifikonja sjelljen e tyre minimale si "energji e shenjës" ose "ai është i keq me mesazhe".</p>
+            <h2>Edhe unë e kam dërguar atë mesazhin me 3 paragrafë në mesnatë.</h2>
+            <p>E di saktësisht si ndihet kur ai papritur ftohet. Edhe unë kam parë "seen" dhe jam shtirur sikur s'më intereson. Edhe unë e justifikoja minimumin e tij si "energji e shenjës" ose "ai thjesht nuk është i mirë me mesazhe".</p>
             <p><strong>Deri sa e zbulova modelin.</strong></p>
-            <p>Astrologjia nuk është justifikim për sjellje toksike — është plan i egosë së tij. Kur e njeh shenjën e tij, i njeh pikët e dobëta. Kur ke standarde, ti fiton.</p>
-            <p style="font-size:13px; color:#888; margin-top:12px;">— Shkruar nga një grua shqiptare, për gratë shqiptare 🦅</p>
+            <p>Astrologjia nuk është justifikim për sjellje toksike — është hartë për ta kuptuar si reagon, ku mbyllet dhe çfarë e bën të hapet. Kur e njeh shenjën e tij dhe mban standardet e tua, ti nuk lutesh më. Ti drejton me qetësi.</p>
+            <p style="font-size:13px; color:#888; margin-top:12px;">— Shkruar për vajzat shqiptare që duan dashuri, jo ankth 🦅</p>
           </div>
         </div>
 
         <!-- Dëshmi Sociale -->
         <div class="social-proof-block">
           <p class="eyebrow">Nga grupi i chat-it</p>
-          <h2>Një tekst i qartë. Plan real. Pa spirale.</h2>
+          <h2>Një tekst i qartë. Plan real. Pa drama.</h2>
           <div class="reviews-carousel">
             <figure class="dm-proof-card">
               <img src="../assets/al-review-1.jpg" alt="Dëshmi DM nga Keisi" loading="lazy">
@@ -300,9 +300,9 @@
         </div>
 
         <ul class="paywall-benefits" id="paywall-benefits">
-          <li><span>Aa</span> 103 Faqe Tekstesh Gati për Kopjim</li>
-          <li><span>!</span> Flamujt Kuq për të 12 Shenjat</li>
-          <li><span>✋</span> Si të vendosësh kufij pa u dukur e çmendur</li>
+          <li><span>Aa</span> 103 faqe me tekste gati për t'i përshtatur</li>
+          <li><span>!</span> Red flags që s'duhet t'i injorosh për të 12 shenjat</li>
+          <li><span>✋</span> Si të vendosësh kufij pa u dukur sikur po bën skenë</li>
         </ul>
 
         <div class="checkout-sticky">
@@ -312,8 +312,8 @@
 
         <div class="honest-sales-mini">
           <p class="eyebrow" style="margin-bottom:8px; display:block;">Një fjalë e sinqertë nga Maya</p>
-          <p>Urrej oraret false të numërimit dhe trukun e vjetër <s>$99</s> "tani $6.99!". Kështu nuk veproj me ty.</p>
-          <p>Kalova muaj duke hulumtuar për këtë guidë. Është vetëm $6.99. Çmim i drejtë për kodet sekrete të mendjes së tij.</p>
+          <p>Urrej numërimet false dhe trukun e vjetër <s>$99</s> "sot vetëm $6.99!". Me ty nuk dua të luaj lojëra.</p>
+          <p>Kalova muaj duke e ndërtuar këtë guidë. Është vetëm $6.99. Një çmim i drejtë për tekstet që mund të të kursejnë javë ankthi.</p>
         </div>
       </section>
 
