@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fffcf8">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Faleminderit! 💌 | Maya Zodiac Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <script src="analytics.js"></script>
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      :root {
+        --ink: #0f0f14;
+        --paper: #fffcf8;
+        --accent: #7c3aed;
+        --green: #16a34a;
+        --green-light: #dcfce7;
+        --muted: #888;
+        --line: rgba(0,0,0,0.08);
+        --radius: 16px;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 24px 16px 48px;
+      }
+
+      .card {
+        max-width: 480px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      /* ── Checkmark hero ── */
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        text-align: center;
+      }
+
+      .checkmark-ring {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: var(--green-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      }
+
+      @keyframes pop {
+        from { transform: scale(0); opacity: 0; }
+        to   { transform: scale(1); opacity: 1; }
+      }
+
+      .checkmark-ring svg {
+        width: 40px;
+        height: 40px;
+        stroke: var(--green);
+        stroke-width: 3;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 60;
+        stroke-dashoffset: 60;
+        animation: draw 0.5s 0.3s ease forwards;
+      }
+
+      @keyframes draw {
+        to { stroke-dashoffset: 0; }
+      }
+
+      .hero h1 {
+        font-size: 26px;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.5px;
+      }
+
+      .hero p {
+        font-size: 15px;
+        color: var(--muted);
+        line-height: 1.6;
+        max-width: 360px;
+      }
+
+      /* ── Step cards ── */
+      .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .step {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 16px;
+      }
+
+      .step-num {
+        flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--ink);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .step-body strong {
+        display: block;
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+
+      .step-body p {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      /* ── Spam warning ── */
+      .spam-alert {
+        background: #fff9e6;
+        border: 1px solid #f59e0b;
+        border-radius: var(--radius);
+        padding: 14px 16px;
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+
+      .spam-alert .icon {
+        font-size: 22px;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+
+      .spam-alert p {
+        font-size: 13px;
+        line-height: 1.55;
+        color: #78350f;
+      }
+
+      .spam-alert strong {
+        font-weight: 700;
+        color: #92400e;
+      }
+
+      /* ── Support block ── */
+      .support {
+        text-align: center;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 20px;
+        background: #fff;
+      }
+
+      .support p {
+        font-size: 13px;
+        color: var(--muted);
+        margin-bottom: 10px;
+        line-height: 1.5;
+      }
+
+      .support a {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--ink);
+        text-decoration: none;
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 2px;
+        transition: opacity 0.2s;
+      }
+
+      .support a:hover {
+        opacity: 0.6;
+      }
+
+      /* ── Maya avatar ── */
+      .maya-sign {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+      }
+
+      .maya-sign img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: top;
+      }
+
+      .maya-sign-text {
+        flex: 1;
+      }
+
+      .maya-sign-text strong {
+        display: block;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .maya-sign-text span {
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      /* ── Footer ── */
+      footer {
+        margin-top: 8px;
+        text-align: center;
+        font-size: 11px;
+        color: var(--muted);
+      }
+
+      footer a {
+        color: var(--muted);
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+
+      <!-- Hero -->
+      <div class="hero">
+        <div class="checkmark-ring">
+          <svg viewBox="0 0 24 24">
+            <polyline points="4 12 9 17 20 6"/>
+          </svg>
+        </div>
+        <h1>Pagesa u konfirmua! 💌</h1>
+        <p>Guida jote e Zodiakut është nisur. Ja çfarë ndodh tani:</p>
+      </div>
+
+      <!-- Steps -->
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <strong>Kontrollo email-in tënd</strong>
+            <p>Hotmart sapo të dërgoi një email konfirmimi me linkun e aksesit. Zgjat rreth 1–2 minuta.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <strong>Hap linkun e Hotmart</strong>
+            <p>Kliko linkun në email — të dërgon direkt në faqen e shkarkimit të guidës. S'ke nevojë për aplikacion.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <strong>Shkarko PDF-në tënde</strong>
+            <p>Ruaje në telefon ose laptop. Është e jotja përgjithmonë — pa abonime, pa skadencë.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spam warning -->
+      <div class="spam-alert">
+        <span class="icon">⚠️</span>
+        <p><strong>Nuk po e gjen email-in?</strong> Kontrollo folderat <strong>Spam</strong> dhe <strong>Promotions</strong> — email-et nga Hotmart shpesh futen aty. Duhet të arrijë brenda 2–5 minutash maksimumi.</p>
+      </div>
+
+      <!-- Support -->
+      <div class="support">
+        <p>Sërish s'po e gjen pas 5 minutash? Më shkruaj direkt në email — e zgjidh unë personalisht brenda pak orësh:</p>
+        <a href="mailto:mayazodiacguide@gmail.com">mayazodiacguide@gmail.com</a>
+      </div>
+
+      <!-- Maya sign-off -->
+      <div class="maya-sign">
+        <img src="../assets/maya-author.webp" alt="Maya">
+        <div class="maya-sign-text">
+          <strong>Maya</strong>
+          <span>Shijoje guidën — e di që do ta përdorësh 😈</span>
+        </div>
+      </div>
+
+      <footer>
+        <a href="/al/">Kthehu në faqe</a> &nbsp;·&nbsp;
+        <a href="/privacy">Privatësia</a> &nbsp;·&nbsp;
+        <a href="/terms">Kushtet</a>
+      </footer>
+
+    </div>
+
+    <script>
+      // Track purchase confirmation page view
+      document.addEventListener('DOMContentLoaded', () => {
+        window.track && window.track('thank_you_page_viewed');
+      });
+    </script>
+  </body>
+</html>

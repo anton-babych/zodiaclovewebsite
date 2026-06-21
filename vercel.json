@@ -5,6 +5,7 @@
   ],
   "rewrites": [
     { "source": "/thank-you", "destination": "/thank-you.html" },
-    { "source": "/al", "destination": "/al/index.html" }
+    { "source": "/al", "destination": "/al/index.html" },
+    { "source": "/al/thank-you", "destination": "/al/thank-you.html" }
   ]
 }
